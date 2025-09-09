@@ -31,7 +31,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
-            I&apos;m Anuoluwapo, a frontend developer with a passion for crafting
+            I&apos;m a frontend developer with a passion for crafting
             clean and performant user interfaces. I enjoy turning complex
             problems into intuitive and delightful user experiences using modern
             web technologies.

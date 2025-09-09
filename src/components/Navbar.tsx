@@ -11,13 +11,13 @@ export default function Navbar() {
       {/* Logo */}
       <Link
         href="/"
-        className="text-xl md:text-2xl font-bold text-white tracking-tight"
+        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight"
       >
         Anuoluwapo.
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-8 text-gray-300">
+      <div className="hidden md:flex gap-8 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
         <Link href="#about" className="hover:text-teal-400 transition">About</Link>
         <Link href="#projects" className="hover:text-teal-400 transition">Projects</Link>
         <Link href="#skills" className="hover:text-teal-400 transition">Skills</Link>
