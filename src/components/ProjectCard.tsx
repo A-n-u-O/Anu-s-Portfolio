@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/dataTypes";
 import { FaGithub } from "react-icons/fa";
 

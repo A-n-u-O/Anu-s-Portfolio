@@ -1,4 +1,4 @@
-import { SocialIcon } from "@/types/dataTypes";
+import { SocialIcon } from "../types/dataTypes";
 
 export const socialIcons: SocialIcon[] = [
   {
