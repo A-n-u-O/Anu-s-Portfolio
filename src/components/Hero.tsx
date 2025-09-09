@@ -87,7 +87,7 @@ export default function Hero() {
               View Projects
             </a>
             <a
-              href="/files/Anu_Resume.pdf"
+              href="/files/Anuoluwapo Cv(7).pdf"
               download
               className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition"
             >
