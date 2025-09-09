@@ -65,8 +65,7 @@ export default function Hero() {
             ref={headingRef}
             className="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight"
           >
-            <span className="text-white">Anuoluwapo</span>{" "}
-            <span className="text-blue-500">Victor</span>
+            <span className="text-blue-500">Anuoluwapo</span>
           </h1>
 
           <p
@@ -87,7 +86,7 @@ export default function Hero() {
               View Projects
             </a>
             <a
-              href="/files/Anuoluwapo Cv(7).pdf"
+              href="/files/Anuoluwapo Cv.pdf"
               download
               className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition"
             >

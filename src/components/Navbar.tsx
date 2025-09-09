@@ -13,7 +13,7 @@ export default function Navbar() {
         href="/"
         className="text-xl md:text-2xl font-bold text-white tracking-tight"
       >
-        Anuoluwapo Victor
+        Anuoluwapo.
       </Link>
 
       {/* Desktop Navigation */}
