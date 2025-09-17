@@ -37,18 +37,6 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "PostgreSQL"],
   },
   {
-    title: "Social App Project",
-    description:
-      "A social media platform with user authentication and real-time updates.",
-    image: "/assets/images/social.png",
-    alt: "Social app",
-    links: {
-      live: "https://social-media-blue-theta.vercel.app/",
-      github: "https://github.com/A-n-u-O/social-app",
-    },
-    tech: ["React", "TypeScript", "Tailwind CSS", "Mantine UI"],
-  },
-  {
     title: "HR Management System",
     description:
       "Feature-rich HRMS dashboard with role-based access, attendance, and payroll integration.",
@@ -73,6 +61,18 @@ export const projects: Project[] = [
     tech: ["React", "Vite", "HTML", "CSS"],
   },
   {
+    title: "E-commerce Product Page",
+    description:
+      "Interactive product display with dynamic preview and cart features.",
+    image: "/assets/images/product.png",
+    alt: "E-commerce product page",
+    links: {
+      live: "https://e-commerce-page-two-tau.vercel.app/",
+      github: "https://github.com/A-n-u-O/ecommerce-product-page",
+    },
+    tech: ["HTML", "CSS", "JavaScript"],
+  },
+  {
     title: "Attendance Logging App",
     description:
       "Efficient app for monitoring and analyzing attendance with a user-friendly interface.",
@@ -85,16 +85,16 @@ export const projects: Project[] = [
     tech: ["JavaScript"],
   },
   {
-    title: "E-commerce Product Page",
+    title: "Social App Project",
     description:
-      "Interactive product display with dynamic preview and cart features.",
-    image: "/assets/images/product.png",
-    alt: "E-commerce product page",
+      "A social media platform with user authentication and real-time updates.",
+    image: "/assets/images/social.png",
+    alt: "Social app",
     links: {
-      live: "https://e-commerce-page-two-tau.vercel.app/",
-      github: "https://github.com/A-n-u-O/ecommerce-product-page",
+      live: "https://social-media-blue-theta.vercel.app/",
+      github: "https://github.com/A-n-u-O/social-app",
     },
-    tech: ["HTML", "CSS", "JavaScript"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Mantine UI"],
   },
   {
     title: "First Portfolio",
