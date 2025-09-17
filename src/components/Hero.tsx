@@ -13,7 +13,14 @@ export default function Hero() {
   const iconsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!headingRef.current || !imageRef.current || !buttonsRef.current || !subTextRef.current || !iconsRef.current) return;
+    if (
+      !headingRef.current ||
+      !imageRef.current ||
+      !buttonsRef.current ||
+      !subTextRef.current ||
+      !iconsRef.current
+    )
+      return;
 
     animate(headingRef.current, {
       translateY: [-40, 0],
@@ -50,10 +57,11 @@ export default function Hero() {
 
     animate([...iconsRef.current.children], {
       opacity: [0, 1],
-      translateY: [10, 0],
+      translateY: [15, 0],
       delay: 900,
-      duration: 800,
+      duration: 700,
       easing: "easeOutExpo",
+      delayIncrement: 100, // 👈 nice staggered animation
     });
   }, []);
 
@@ -101,7 +109,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Enhanced Social Icons */}
+          {/* 🔥 Stylish Animated Social Icons */}
           <div
             ref={iconsRef}
             className="flex gap-4 justify-center md:justify-start pt-4"
@@ -112,35 +120,28 @@ export default function Hero() {
                 href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative p-3 rounded-xl bg-blue-300 backdrop-blur-sm 
-                           border border-gray-700/50 hover:border-blue-500/50 
+                className="group relative w-12 h-12 flex items-center justify-center rounded-full 
+                           bg-[#1a1a1a]/80 backdrop-blur-sm border border-gray-700/50
+                           hover:border-blue-500/50 hover:bg-blue-600/20
                            transition-all duration-300 hover:scale-110 
                            hover:shadow-lg hover:shadow-blue-500/25"
               >
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                
+                {/* Icon */}
                 <Image
                   src={icon.src}
                   alt={icon.alt}
                   width={24}
                   height={24}
-                  className="relative z-10 w-6 h-6 filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                  className="relative z-10 opacity-80 group-hover:opacity-100 invert transition duration-300"
                 />
-                
+
                 {/* Tooltip */}
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 
-                               bg-gray-900 text-white text-xs px-2 py-1 rounded-md
-                               opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                               pointer-events-none whitespace-nowrap border border-gray-700">
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   {icon.alt}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 
-                                 border-4 border-transparent border-t-gray-900"></div>
-                </div>
+                </span>
               </a>
             ))}
           </div>
-
         </div>
 
         {/* Right Avatar Section */}
@@ -156,9 +157,7 @@ export default function Hero() {
                          group-hover:border-blue-500/50 transition-all duration-500
                          hover:scale-105"
             />
-            {/* Animated ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-blue-500/30 
-                           animate-pulse group-hover:border-blue-500/60 transition-colors duration-300"></div>
+            <div className="absolute inset-0 rounded-full border-2 border-blue-500/30 animate-pulse group-hover:border-blue-500/60 transition-colors duration-300"></div>
           </div>
         </div>
       </div>
