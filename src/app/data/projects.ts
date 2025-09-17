@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: "Mini-Commerce",
     description:
       "Next.js e-commerce prototype with persistent cart, TypeScript validation, and SEO optimization. Features product browsing, checkout flow, and responsive design.",
-    image: "/assets/images/mini-commerce.png",
+    image: "/assets/images/miniCommerce.png",
     alt: "Mini-Commerce product page screenshot",
     links: {
       live: "https://mini-commerce-liart.vercel.app/",
