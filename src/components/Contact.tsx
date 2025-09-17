@@ -1,8 +1,36 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_l52lsn8",      //Your Service ID
+        "template_dq3sdfn",     //Your Template ID
+        form.current,
+        "WV_RNMjUVVb3TJXMy"  //EmailJS Public Key
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current?.reset();
+        },
+        (error) => {
+          console.error(error);
+          alert("Failed to send message. Try again later.");
+        }
+      );
+  };
+
   return (
     <motion.section
       id="contact"
@@ -20,28 +48,29 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Let’s Connect
+          Let&apos;s Connect
         </motion.h2>
 
         <motion.form
-          action="mailto:anuoluwa2051@gmail.com"
-          method="POST"
+          ref={form}
+          onSubmit={sendEmail}
           className="flex flex-col gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
+          <input type="hidden" name="to_name" value="Anuoluwapo" />
           <input
             type="text"
-            name="name"
+            name="user_name"
             placeholder="Your Name"
             required
             className="bg-[#111] border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-blue-500"
           />
           <input
             type="email"
-            name="email"
+            name="user_email"
             placeholder="Your Email"
             required
             className="bg-[#111] border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-blue-500"
