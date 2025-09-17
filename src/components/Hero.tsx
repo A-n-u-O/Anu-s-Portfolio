@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
@@ -57,8 +58,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-12 bg-[#0a0a0a] text-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen flex items-center px-6 md:px-12 bg-[#0a0a0a] text-white relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Section */}
         <div className="space-y-8 text-center md:text-left">
           <h1
@@ -81,22 +88,23 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="px-6 py-3 rounded-xl border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition"
+              className="px-6 py-3 rounded-xl border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
             >
               View Projects
             </a>
             <a
               href="/files/Anuoluwapo Cv.pdf"
               download
-              className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition"
+              className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg"
             >
               Download Resume
             </a>
           </div>
 
+          {/* Enhanced Social Icons */}
           <div
             ref={iconsRef}
-            className="flex gap-5 justify-center md:justify-start"
+            className="flex gap-4 justify-center md:justify-start pt-4"
           >
             {socialIcons.map((icon, idx) => (
               <a
@@ -104,30 +112,54 @@ export default function Hero() {
                 href={icon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:scale-110 transition"
+                className="group relative p-3 rounded-xl bg-blue-300 backdrop-blur-sm 
+                           border border-gray-700/50 hover:border-blue-500/50 
+                           transition-all duration-300 hover:scale-110 
+                           hover:shadow-lg hover:shadow-blue-500/25"
               >
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                
                 <Image
                   src={icon.src}
                   alt={icon.alt}
-                  width={28}
-                  height={28}
-                  className="w-6 h-6"
+                  width={24}
+                  height={24}
+                  className="relative z-10 w-6 h-6 filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                 />
+                
+                {/* Tooltip */}
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 
+                               bg-gray-900 text-white text-xs px-2 py-1 rounded-md
+                               opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                               pointer-events-none whitespace-nowrap border border-gray-700">
+                  {icon.alt}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 
+                                 border-4 border-transparent border-t-gray-900"></div>
+                </div>
               </a>
             ))}
           </div>
+
         </div>
 
         {/* Right Avatar Section */}
         <div ref={imageRef} className="flex justify-center relative">
           <div className="absolute -inset-10 rounded-full bg-gradient-to-tr from-blue-600/40 to-purple-600/40 blur-3xl"></div>
-          <Image
-            src="/assets/images/hero-avatar.png"
-            alt="Anu Avatar"
-            width={420}
-            height={420}
-            className="relative rounded-full border border-gray-700 shadow-lg"
-          />
+          <div className="relative group">
+            <Image
+              src="/assets/images/hero-avatar.png"
+              alt="Anu Avatar"
+              width={420}
+              height={420}
+              className="relative rounded-full border-2 border-gray-700 shadow-2xl 
+                         group-hover:border-blue-500/50 transition-all duration-500
+                         hover:scale-105"
+            />
+            {/* Animated ring */}
+            <div className="absolute inset-0 rounded-full border-2 border-blue-500/30 
+                           animate-pulse group-hover:border-blue-500/60 transition-colors duration-300"></div>
+          </div>
         </div>
       </div>
     </section>
