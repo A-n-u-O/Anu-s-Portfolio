@@ -46,7 +46,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Let&apos;s Connect
+          Let&apos;s Connect!
         </motion.h2>
 
         <motion.form
