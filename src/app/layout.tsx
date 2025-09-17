@@ -1,4 +1,3 @@
-// layout.tsx
 import "./globals.css";
 import { ReactNode } from "react";
 import { Inter } from "next/font/google";
@@ -9,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Anuoluwapo Victor | Developer Portfolio",
   description: "Frontend Developer Portfolio showcasing projects, skills, and contact information.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
