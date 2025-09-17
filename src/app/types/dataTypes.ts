@@ -7,7 +7,7 @@ export interface Project {
     live?: string;
     github?: string;
   };
-  tech?: string[];
+  tech: string[];
 }
 
 export interface SocialIcon {
