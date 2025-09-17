@@ -8,7 +8,7 @@ export const projects: Project[] = [
     image: "/assets/images/mini-commerce.png",
     alt: "Mini-Commerce product page screenshot",
     links: {
-      live: "https://mini-commerce.vercel.app/",
+      live: "https://mini-commerce-liart.vercel.app/",
       github: "https://github.com/A-n-u-O/mini-commerce",
     },
     tech: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
