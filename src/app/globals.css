@@ -30,3 +30,9 @@ html, body {
   width: 100%;
 }
 
+/* Add to your globals.css temporarily for debugging */
+@media (max-width: 768px) {
+  #projects * {
+    border: 1px solid red !important;
+  }
+}
