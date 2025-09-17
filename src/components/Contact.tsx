@@ -5,30 +5,28 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const form = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!form.current) return;
+    if (!formRef.current) return;
 
     emailjs
       .sendForm(
-        "service_l52lsn8",      //Your Service ID
-        "template_dq3sdfn",     //Your Template ID
-        form.current,
-        "WV_RNMjUVVb3TJXMy"  //EmailJS Public Key
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          form.current?.reset();
-        },
-        (error) => {
-          console.error(error);
-          alert("Failed to send message. Try again later.");
-        }
-      );
+      .then(() => {
+        alert("Message sent successfully!");
+        formRef.current?.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to send message. Try again later.");
+      });
   };
 
   return (
@@ -52,7 +50,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.form
-          ref={form}
+          ref={formRef}
           onSubmit={sendEmail}
           className="flex flex-col gap-6"
           initial={{ opacity: 0, y: 20 }}
@@ -61,6 +59,7 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <input type="hidden" name="to_name" value="Anuoluwapo" />
+
           <input
             type="text"
             name="user_name"
@@ -68,6 +67,7 @@ export default function Contact() {
             required
             className="bg-[#111] border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-blue-500"
           />
+
           <input
             type="email"
             name="user_email"
@@ -75,6 +75,7 @@ export default function Contact() {
             required
             className="bg-[#111] border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-blue-500"
           />
+
           <textarea
             name="message"
             rows={5}
@@ -82,6 +83,7 @@ export default function Contact() {
             required
             className="bg-[#111] border border-gray-700 text-white px-4 py-3 rounded-lg resize-none focus:outline-none focus:border-blue-500"
           />
+
           <motion.button
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-medium self-center"
