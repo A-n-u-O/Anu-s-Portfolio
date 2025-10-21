@@ -24,10 +24,11 @@ export default function About() {
         </motion.h2>
 
         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          I&apos;m a frontend developer with a passion for crafting clean and
-          performant user interfaces. I enjoy turning complex problems into
-          intuitive and delightful user experiences using modern web
-          technologies.
+          I build solutions with a focus on clarity, structure, and impact, with experience spanning digital projects and
+community initiatives. I bring a blend of technical ability, analytical thinking, and leadership experience—
+from building functional web solutions to driving initiatives in financial literacy and community service. I am
+eager to contribute to dynamic environments where I can grow, collaborate, and add value across both
+technical and non-technical projects.
         </p>
 
         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
