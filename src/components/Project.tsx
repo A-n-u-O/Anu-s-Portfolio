@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[#0b0b0b] text-white px-2 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 overflow-visible"
+      className="bg-[#0b0b0b] text-white px-3 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 min-h-screen"
     >
       <div className="max-w-6xl mx-auto">
         {/* Filter Buttons */}
@@ -50,7 +50,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 relative z-10">
           {filteredProjects.map((project, idx) => (
             <div key={`project-${idx}`} className="w-full">
               <ProjectCard project={project} />
@@ -58,6 +58,7 @@ export default function Projects() {
           ))}
         </div>
 
+        {/* No Projects Message */}
         {filteredProjects.length === 0 && (
           <p className="text-center text-gray-400 mt-10 text-sm sm:text-base">
             No projects available in this category yet.

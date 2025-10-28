@@ -1,13 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Projects from "@/components/Project";
-import Skills from "@/components/Skills";
 
 export default function Showcase() {
-  const [activeTab, setActiveTab] = useState<"projects" | "skills">("projects");
-
   return (
     <motion.section
       id="showcase"
@@ -15,7 +11,7 @@ export default function Showcase() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-[#0b0b0b] text-white px-4 sm:px-6 md:px-12 lg:px-16 py-20 sm:py-24 md:py-28"
+      className="bg-[#0b0b0b] text-white px-4 sm:px-6 md:px-12 lg:px-16 py-20 sm:py-24 md:py-28 min-h-screen"
     >
       <div className="max-w-6xl mx-auto text-center space-y-12">
         {/* Heading */}
@@ -25,29 +21,12 @@ export default function Showcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My Work & Skills
+          My Work
         </motion.h2>
 
-        {/* Tabs */}
-        <div className="flex justify-center gap-4 sm:gap-6 flex-wrap">
-          {["projects", "skills"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab as "projects" | "skills")}
-              className={`px-4 sm:px-6 py-2 rounded-full text-sm md:text-base transition-all border ${
-                activeTab === tab
-                  ? "bg-gradient-to-r from-blue-500 to-pink-500 text-white border-transparent"
-                  : "bg-transparent border-gray-600 text-gray-400 hover:text-white hover:border-blue-500"
-              }`}
-            >
-              {tab === "projects" ? "Projects" : "Skills"}
-            </button>
-          ))}
-        </div>
-
-        {/* Content */}
+        {/* Projects Section */}
         <div className="mt-12">
-          {activeTab === "projects" ? <Projects /> : <Skills />}
+          <Projects />
         </div>
       </div>
     </motion.section>

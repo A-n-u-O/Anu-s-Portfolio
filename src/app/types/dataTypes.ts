@@ -23,5 +23,5 @@ export interface eventDetails {
     date: string;
     description:string;
     skills: string[],
-    link: string;
+    link?: string;
 }
