@@ -82,7 +82,7 @@ export default function About() {
                 View My Work
               </a>
               <a
-                href="/files/Anuoluwapo_CV.pdf"
+                href="/Anuoluwapo_Victor_cv.pdf"
                 download
                 className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg"
               >
