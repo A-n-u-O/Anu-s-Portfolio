@@ -15,7 +15,7 @@ export default function Events() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           variants={fadeInLeft}
-          className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-14"
+          className="text-5xl lg:text-7xl text-center font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-14"
         >
           Tech Events & Learning
         </motion.h2>
