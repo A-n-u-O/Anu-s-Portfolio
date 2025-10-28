@@ -1,4 +1,6 @@
-export const events = [
+import { eventDetails } from "../types/dataTypes";
+
+export const events: eventDetails[] = [
   {
     title: "TechWomen Fest 2025",
     organizer: "NezaTech Africa",

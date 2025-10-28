@@ -1,5 +1,5 @@
 // page.tsx
-"use client"
+"use client";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Hero from "@/components/Hero";
@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import Skills from "@/components/Skills";
 import Events from "@/components/EventsSection";
+import Showcase from "@/components/ShowCase";
 
 export default function Home() {
   return (
@@ -15,11 +16,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
-      <Skills />
+      <Showcase />
       <Events />
       <Contact />
-      <Footer/>
+      <Footer />
     </>
   );
 }

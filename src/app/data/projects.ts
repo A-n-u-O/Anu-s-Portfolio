@@ -12,6 +12,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/mini-commerce",
     },
     tech: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "Expense Tracker Dashboard",
@@ -24,6 +25,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/expense-tracker-dashboard",
     },
     tech: ["Next.js", "Zustand", "Tailwind CSS", "Chart.js"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "Auth App",
@@ -35,6 +37,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/Authentication-with-PERN-stack",
     },
     tech: ["React", "Node.js", "PostgreSQL"],
+    category: ["FullStack", "Web Development"],
   },
   {
     title: "HR Management System",
@@ -47,6 +50,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/hrms",
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "Material UI"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "Todo App",
@@ -59,6 +63,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/todo-app",
     },
     tech: ["React", "Vite", "HTML", "CSS"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "E-commerce Product Page",
@@ -71,6 +76,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/ecommerce-product-page",
     },
     tech: ["HTML", "CSS", "JavaScript"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "Attendance Logging App",
@@ -83,6 +89,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/attendance-logging-app",
     },
     tech: ["JavaScript"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "Social App Project",
@@ -95,6 +102,7 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/social-app",
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "Mantine UI"],
+    category: ["Frontend", "Web Development"],
   },
   {
     title: "First Portfolio",
@@ -107,5 +115,6 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/A-n-u-O.github.io",
     },
     tech: ["HTML", "CSS", "JavaScript"],
+    category: ["Frontend", "Web Development"],
   },
 ];
