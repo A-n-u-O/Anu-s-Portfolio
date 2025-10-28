@@ -20,7 +20,7 @@ export default function Projects() {
         color: "white",
         minHeight: "50vh",
       }}>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2
           className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 md:mb-16 text-center md:text-left"
           style={{

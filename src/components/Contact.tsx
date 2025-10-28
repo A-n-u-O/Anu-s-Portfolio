@@ -38,7 +38,7 @@ export default function Contact() {
       viewport={{ once: true, amount: 0.2 }}
       className="bg-[#0a0a0a] text-white px-6 md:px-16 py-28"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-10 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
