@@ -22,6 +22,8 @@ export default function Navbar() {
         <Link href="#projects" className="hover:text-teal-400 transition">Projects</Link>
         <Link href="#skills" className="hover:text-teal-400 transition">Skills</Link>
         <Link href="#contact" className="hover:text-teal-400 transition">Contact</Link>
+        <Link href="#events" className="hover:text-teal-400 transition">Events</Link>
+
       </div>
 
       {/* Mobile Menu Button */}

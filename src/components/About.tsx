@@ -24,18 +24,17 @@ export default function About() {
         </motion.h2>
 
         <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          I build solutions with a focus on clarity, structure, and impact, with experience spanning digital projects and
-community initiatives. I bring a blend of technical ability, analytical thinking, and leadership experience—
-from building functional web solutions to driving initiatives in financial literacy and community service. I am
-eager to contribute to dynamic environments where I can grow, collaborate, and add value across both
-technical and non-technical projects.
-        </p>
+  I build thoughtful digital solutions that balance clarity, structure, and impact. With experience across
+  both technical projects and community initiatives, I combine analytical thinking, creativity, and leadership—
+  from developing functional web applications to driving programs in financial literacy and community service.
+  I&apos;m eager to contribute to dynamic environments where growth, collaboration, and purpose come together.
+</p>
 
-        <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          From dashboards to e-commerce and interactive apps, I aim to build
-          pixel-perfect and scalable products that focus on real-world usability
-          and performance.
-        </p>
+<p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+  From dashboards to e-commerce platforms and interactive applications, I focus on building
+  pixel-perfect, scalable products designed for real-world usability and performance.
+</p>
+
       </div>
     </motion.section>
   );

@@ -87,7 +87,7 @@ export default function Hero() {
             ref={subTextRef}
             className="text-lg md:text-2xl text-gray-400 max-w-xl mx-auto md:mx-0"
           >
-            Frontend Developer passionate about building clean, performant, and interactive user interfaces.
+            I&apos;m a Frontend Developer focused on building fast, accessible, and visually refined web interfaces that feel effortless to use.
           </p>
 
           <div
@@ -109,7 +109,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* 🔥 Stylish Animated Social Icons */}
+          {/* Social Icons */}
           <div
             ref={iconsRef}
             className="flex gap-4 justify-center md:justify-start pt-4"

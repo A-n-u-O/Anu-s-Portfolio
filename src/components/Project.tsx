@@ -11,7 +11,6 @@ export default function Projects() {
     setMounted(true);
   }, []);
 
-  // Simple version without complex animations
   return (
     <section
       id="projects"
@@ -22,7 +21,6 @@ export default function Projects() {
         minHeight: "50vh",
       }}>
       <div className="max-w-7xl mx-auto">
-        {/* Title with better contrast */}
         <h2
           className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 md:mb-16 text-center md:text-left"
           style={{
@@ -35,7 +33,6 @@ export default function Projects() {
           Projects
         </h2>
 
-        {/* Projects Grid - Simple and reliable */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {projects.map((project, idx) => (
             <div
