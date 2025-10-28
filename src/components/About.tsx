@@ -2,8 +2,26 @@
 
 import { motion } from "framer-motion";
 import { fadeInLeft, fadeInUp } from "@/utils/motion";
+import { animate } from "animejs";
+import { useEffect, useRef } from "react";
 
 export default function About() {
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!buttonsRef.current) return;
+    [...buttonsRef.current.children].forEach((child, index) => {
+      animate(child, {
+        opacity: [0, 1],
+        translateY: [10, 0],
+        easing: "easeOutExpo",
+        delay: 600 + index * 150,
+        duration: 600,
+      });
+    });
+  }, []);
+
+  
   return (
     <motion.section
       id="about"
@@ -38,6 +56,25 @@ export default function About() {
           I focus on building pixel-perfect, scalable products designed for
           real-world usability and performance.
         </p>
+        {/* Buttons */}
+        <div
+          ref={buttonsRef}
+          className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        >
+          <a
+            href="#projects"
+            className="px-6 py-3 rounded-xl border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+          >
+            View my work
+          </a>
+          <a
+            href="/files/Anuoluwapo Cv.pdf"
+            download
+            className="px-6 py-3 rounded-xl border border-gray-400 text-gray-300 hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg"
+          >
+            Download Resume
+          </a>
+        </div>
       </div>
     </motion.section>
   );

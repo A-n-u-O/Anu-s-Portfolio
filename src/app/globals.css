@@ -29,3 +29,16 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
