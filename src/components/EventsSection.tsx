@@ -1,6 +1,7 @@
 "use client";
 
 import { events } from "@/app/data/techEvents";
+import { fadeInLeft } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
@@ -13,7 +14,8 @@ export default function Events() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-14"
+          variants={fadeInLeft}
+          className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-14"
         >
           Tech Events & Learning
         </motion.h2>
