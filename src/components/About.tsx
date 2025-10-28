@@ -32,9 +32,9 @@ export default function About() {
       className="relative bg-[#0d0d0d] text-white px-6 md:px-16 py-28 overflow-hidden"
     >
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111] to-black opacity-70 pointer-events-none" />
+      <div className="absolute  inset-0 bg-gradient-to-b from-transparent via-[#111111] to-black opacity-70 pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto space-y-16">
+      <div className="relative mt-8 max-w-6xl mx-auto space-y-16">
         {/* Header */}
         <motion.h2
           variants={fadeInLeft}
