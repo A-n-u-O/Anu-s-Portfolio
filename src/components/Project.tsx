@@ -12,7 +12,14 @@ export default function Projects() {
     setMounted(true);
   }, []);
 
-  const categories = ["All", "Web Development", "Machine Learning","Frontend","Backend",  "Design"];
+  const categories = [
+    "All",
+    "Web Development",
+    "Machine Learning",
+    "Frontend",
+    "Backend",
+    "Design",
+  ];
 
   const filteredProjects =
     selectedCategory === "All"
@@ -22,36 +29,18 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[#0b0b0b] text-white px-4 md:px-16 py-16 md:py-28"
-      style={{
-        backgroundColor: "#0b0b0b",
-        color: "white",
-        minHeight: "50vh",
-      }}
+      className="bg-[#0b0b0b] text-white px-2 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 overflow-visible"
     >
       <div className="max-w-6xl mx-auto">
-        {/* <h2
-          className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 md:mb-12 text-center md:text-left"
-          style={{
-            background: "linear-gradient(to right, #60a5fa, #a78bfa, #f472b6)",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            color: "#60a5fa",
-          }}
-        >
-          Projects
-        </h2> */}
-
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-10">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2 rounded-full border transition-all duration-200 ${
+              className={`px-4 sm:px-5 py-2 rounded-full border text-sm sm:text-base transition-all duration-300 ${
                 selectedCategory === cat
-                  ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white"
+                  ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white border-transparent"
                   : "border-gray-500 text-gray-300 hover:border-white hover:text-white"
               }`}
             >
@@ -61,16 +50,16 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project, idx) => (
-            <div key={`project-${idx}`} className="w-full" style={{ minWidth: 0 }}>
+            <div key={`project-${idx}`} className="w-full">
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
 
         {filteredProjects.length === 0 && (
-          <p className="text-center text-gray-400 mt-10">
+          <p className="text-center text-gray-400 mt-10 text-sm sm:text-base">
             No projects available in this category yet.
           </p>
         )}
