@@ -24,8 +24,10 @@ export default function Contact() {
       formRef.current?.reset();
       setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
-      console.error(error);
+      console.error("EmailJS Error:", error);
+      alert("Error: " + JSON.stringify(error));
       setStatus("error");
+
       setTimeout(() => setStatus("idle"), 4000);
     }
   };
@@ -46,12 +48,13 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Let’s Talk ✨
+          Let&apos;s Talk ✨
         </motion.h2>
 
         <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          Whether it’s feedback, a project idea, or just a quick “hey, I love what you built” —  
-          my inbox is always open. I’d love to hear from you 🪴
+          Whether it&apos;s feedback, a project idea, or just a quick “hey, I
+          love what you built” — my inbox is always open. I&apos;d love to hear
+          from you 🪴
         </p>
 
         <motion.form
@@ -128,7 +131,7 @@ export default function Contact() {
             exit={{ opacity: 0, y: -20 }}
             className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg"
           >
-            Oops! Something went wrong. Try again 💭
+            Oops! Something went wrong. Try again
           </motion.div>
         )}
       </div>
