@@ -52,13 +52,6 @@ export default function Navbar() {
             Projects
           </Link>
           <Link
-            href="#skills"
-            className="hover:text-teal-400 transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Skills
-          </Link>
-          <Link
             href="#contact"
             className="hover:text-teal-400 transition"
             onClick={() => setMenuOpen(false)}
