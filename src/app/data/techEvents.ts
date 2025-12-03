@@ -13,11 +13,11 @@ export const events: eventDetails[] = [
   {
     title: "Google DevFest Lagos",
     organizer: "GDG Lagos",
-    date: "September 2025",
+    date: "November 2025",
     description:
       "Attended sessions on web performance optimization and developer tools. Learned new techniques for optimizing React applications and integrating PWAs.",
     skills: ["React", "Web Performance", "PWAs"],
-    // link: "https://example.com",
+    link: "https://www.linkedin.com/posts/a-n-u-o_devfestlagos-gdglagos-activity-7399406571857809411-vBms?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD6lPY4BSGMOc-9xDhCh1Gq3CY4QfPPXHu8",
   },
   {
     title: "TEDxBabcock University",

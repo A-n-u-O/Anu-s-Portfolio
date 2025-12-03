@@ -158,15 +158,15 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Avatar */}
+        {/* Right Image */}
         <div ref={imageRef} className="flex justify-center relative">
           <div className="absolute -inset-10 rounded-full bg-gradient-to-tr from-blue-600/40 to-purple-600/40 blur-3xl"></div>
           <div className="relative group">
             <Image
-              src="/assets/images/hero-avatar.png"
+              src="/assets/images/anu2.jpg"
               alt="Anu Avatar"
-              width={420}
-              height={420}
+              width={620}
+              height={620}
               className="relative rounded-full border-2 border-gray-700 shadow-2xl 
                          group-hover:border-blue-500/50 transition-all duration-500
                          hover:scale-105"
