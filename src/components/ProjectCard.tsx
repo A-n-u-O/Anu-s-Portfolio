@@ -17,8 +17,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="group w-full min-w-0 bg-[#111111] rounded-2xl overflow-hidden 
-                 shadow-md hover:shadow-blue-500/20 transition-transform duration-300 
+      className="group w-full min-w-0 bg-primary rounded-2xl overflow-hidden 
+                 shadow-md hover:shadow-accent/20 transition-transform duration-300 
                  ease-out hover:scale-105 flex flex-col"
     >
       {/* Project Image */}
@@ -35,8 +35,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Project Content */}
       <div className="flex flex-col flex-1 p-6 space-y-4">
-        <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed flex-1">
+        <h3 className="text-2xl font-bold text-light">{project.title}</h3>
+        <p className="text-muted text-sm leading-relaxed flex-1">
           {project.description}
         </p>
 
@@ -46,8 +46,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tech.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 text-xs font-medium bg-[#1a1a1a] 
-                           text-gray-300 rounded-full border border-gray-800"
+                className="px-3 py-1 text-xs font-medium bg-secondary 
+                           text-light rounded-full border border-secondary"
               >
                 {tech}
               </span>
@@ -62,8 +62,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 
-                         text-white px-4 py-2 rounded-lg text-sm transition-colors"
+              className="flex items-center gap-2 bg-accent hover:bg-muted 
+                         text-light px-4 py-2 rounded-lg text-sm transition-colors"
             >
               <ExternalLink size={16} /> Live
             </a>
@@ -74,8 +74,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 
-                         text-white px-4 py-2 rounded-lg text-sm transition-colors"
+              className="flex items-center gap-2 bg-secondary hover:bg-primary 
+                         text-light px-4 py-2 rounded-lg text-sm transition-colors"
             >
               <FaGithub size={16} /> Code
             </a>

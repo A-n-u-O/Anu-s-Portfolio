@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[#0b0b0b] text-white px-2 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 min-h-screen"
+      className="bg-secondary text-light px-2 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 min-h-screen"
     >
       <div className="max-w-6xl mx-auto">
         {/* Filter Buttons */}
@@ -40,8 +40,8 @@ export default function Projects() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-2 sm:px-5 py-2 rounded-full border text-sm sm:text-base transition-all duration-300 ${
                 selectedCategory === cat
-                  ? "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white border-transparent"
-                  : "border-gray-500 text-gray-300 hover:border-white hover:text-white"
+                  ? "bg-accent text-light border-transparent"
+                  : "border-muted text-muted hover:border-light hover:text-light"
               }`}
             >
               {cat}
