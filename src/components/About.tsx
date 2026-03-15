@@ -5,6 +5,7 @@ import { fadeInLeft, fadeInUp } from "@/utils/motion";
 import { animate } from "animejs";
 import { useEffect, useRef } from "react";
 import { techStack } from "@/app/data/techStack";
+import Image from "next/image";
 
 export default function About() {
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -114,7 +115,7 @@ export default function About() {
                       transition={{ delay: j * 0.05 }}
                       className="bg-accent/60 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-accent/80 transition shadow-md"
                     >
-                      <img src={item.icon} alt={item.name} className="w-6 h-6" />
+                      <Image src={item.icon} alt={item.name} className="w-6 h-6" />
                       <span className="text-light text-sm">{item.name}</span>
                     </motion.div>
                   ))}

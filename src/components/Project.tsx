@@ -1,16 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { projects } from "@/app/data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
-  const [mounted, setMounted] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const categories = [
     "All",

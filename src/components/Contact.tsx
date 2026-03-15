@@ -53,7 +53,7 @@ export default function Contact() {
           className="w-full h-full md:w-1/3 relative flex flex-col justify-center items-center text-center md:text-left space-y-6"
         >
           <div className="relative">
-            <img
+            <Image
               src="/assets/images/anu3.jpg"
               alt="Contact illustration"
               className="w-full h-fit rounded-2xl shadow-lg object-cover brightness-90"
