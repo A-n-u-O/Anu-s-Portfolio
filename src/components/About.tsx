@@ -46,7 +46,7 @@ export default function About() {
 
         {/* Content Wrapper */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-          
+
           {/* LEFT: Description + Buttons */}
           <div className="flex-1 text-center lg:text-left space-y-8">
             <div className="space-y-6 text-muted text-lg lg:text-xl leading-relaxed">
@@ -115,7 +115,13 @@ export default function About() {
                       transition={{ delay: j * 0.05 }}
                       className="bg-accent/60 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-accent/80 transition shadow-md"
                     >
-                      <Image src={item.icon} alt={item.name} className="w-6 h-6" />
+                      <Image
+                        src={item.icon}
+                        alt={item.name}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
                       <span className="text-light text-sm">{item.name}</span>
                     </motion.div>
                   ))}

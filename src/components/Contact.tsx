@@ -56,6 +56,8 @@ export default function Contact() {
             <Image
               src="/assets/images/anu3.jpg"
               alt="Contact illustration"
+              width={500}   // Add this (adjust based on original image size)
+              height={500}  // Add this (adjust based on original image size)
               className="w-full h-fit rounded-2xl shadow-lg object-cover brightness-90"
             />
             <div className="absolute inset-0 bg-black/40 rounded-2xl flex items-center justify-center">
@@ -65,7 +67,7 @@ export default function Contact() {
             </div>
           </div>
 
-         {/* Social Icons */}
+          {/* Social Icons */}
           <div
             ref={iconsRef}
             className="flex gap-4 justify-center md:justify-start pt-4 "
