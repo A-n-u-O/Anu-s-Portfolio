@@ -11,17 +11,17 @@ export default function Navbar() {
       {/* Logo */}
       <Link
         href="/"
-        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent tracking-tight"
+        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent tracking-tight"
       >
         Anuoluwapo.
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-8 bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">
-        <Link href="#about" className="hover:text-highlight transition">About</Link>
-        <Link href="#projects" className="hover:text-highlight transition">Projects</Link>
-        <Link href="#contact" className="hover:text-highlight transition">Contact</Link>
-        <Link href="#events" className="hover:text-highlight transition">Events</Link>
+      <div className="hidden md:flex gap-8 bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent">
+        <Link href="#about" className="hover:text-accentSoft transition">About</Link>
+        <Link href="#projects" className="hover:text-accentSoft transition">Projects</Link>
+        <Link href="#contact" className="hover:text-accentSoft transition">Contact</Link>
+        <Link href="#events" className="hover:text-accentSoft transition">Events</Link>
 
       </div>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-primary/95 backdrop-blur py-6 px-6 flex flex-col gap-4 border-b border-secondary/50 text-muted">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-primary/95 backdrop-blur py-6 px-6 flex flex-col gap-4 border-b border-secondary/50 text-light">
           <Link
             href="#about"
             className="hover:text-light transition"

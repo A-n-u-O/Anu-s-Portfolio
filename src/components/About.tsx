@@ -30,16 +30,16 @@ export default function About() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative bg-highlight text-primary px-6 md:px-16 py-28 overflow-hidden"
+      className="relative bg-secondary text-light px-6 md:px-16 py-28 overflow-hidden"
     >
       {/* Gradient overlay */}
-      <div className="absolute  inset-0 bg-gradient-to-b from-transparent via-highlight to-primary opacity-70 pointer-events-none" />
+      <div className="absolute  inset-0 bg-gradient-to-b from-transparent via-light to-primary opacity-70 pointer-events-none" />
 
       <div className="relative mt-8 max-w-6xl mx-auto space-y-16">
         {/* Header */}
         <motion.h2
           variants={fadeInLeft}
-          className="text-5xl lg:text-7xl font-bold text-center bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent"
+          className="text-5xl lg:text-7xl font-bold text-center bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent"
         >
           About Me
         </motion.h2>
@@ -49,7 +49,7 @@ export default function About() {
 
           {/* LEFT: Description + Buttons */}
           <div className="flex-1 text-center lg:text-left space-y-8">
-            <div className="space-y-6 text-primary text-lg lg:text-xl leading-relaxed">
+            <div className="space-y-6 text-light text-lg lg:text-xl leading-relaxed">
               <p>
                 I&apos;m a{" "}
                 <span className="text-accent font-medium">Frontend Developer</span>{" "}
@@ -60,13 +60,13 @@ export default function About() {
 
               <p>
                 I also explore{" "}
-                <span className="text-highlight font-medium">machine learning</span>{" "}
+                <span className="text-accentSoft font-medium">machine learning</span>{" "}
                 and{" "}
                 <span className="text-accentSoft font-medium">data analysis</span>,
                 where I learn how data insights can shape smarter, user-driven
                 products. Beyond code, I enjoy{" "}
-                <span className="text-blue-300 font-medium">designing</span> and{" "}
-                <span className="text-blue-300 font-medium">video editing</span>,
+                <span className="text-accentSoft font-medium">designing</span> and{" "}
+                <span className="text-accentSoft font-medium">video editing</span>,
                 combining logic with creativity to tell stories visually.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function About() {
             >
               <a
                 href="#projects"
-                className="px-6 py-3 rounded-xl border border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+                className="px-6 py-3 rounded-xl border border-accent text-accent hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg hover:shadow-accentSoft/25"
               >
                 View My Work
               </a>
@@ -86,7 +86,7 @@ export default function About() {
                 href="/Anuoluwapo_Victor_Software_Developer_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl border border-secondary text-secondary hover:bg-highlight hover:text-primary transition-all duration-300 hover:shadow-lg"
+                className="px-6 py-3 rounded-xl border border-secondary text-secondary hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg"
               >
                 View Resume
               </a>

@@ -52,11 +52,11 @@ export default function Contact() {
           transition={{ duration: 1, delay: 0.2 }}
           className="w-full md:w-2/3"
         >
-          <motion.h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent via-light to-muted bg-clip-text text-transparent mb-6">
+          <motion.h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent via-light to-accentSoft bg-clip-text text-transparent mb-6">
             Let&apos;s Talk ✨
           </motion.h2>
 
-          <p className="text-muted text-lg leading-relaxed mb-8 max-w-lg">
+          <p className="text-light text-lg leading-relaxed mb-8 max-w-lg">
             Whether it&apos;s feedback, a project idea, or just a quick “hey, I
             love what you built” — my inbox is always open. I&apos;d love to
             hear from you
@@ -106,7 +106,7 @@ export default function Contact() {
 
             <motion.button
               type="submit"
-              className="bg-accent hover:bg-muted transition px-6 py-3 rounded-lg text-light font-medium self-center md:self-start shadow-lg shadow-accent/20"
+              className="bg-accent hover:bg-accentSoft transition px-6 py-3 rounded-lg text-light font-medium self-center md:self-start shadow-lg shadow-accent/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

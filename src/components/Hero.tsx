@@ -67,11 +67,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen pt-7 flex items-center px-6 md:px-12 bg-gradient-to-br from-primary to-secondary text-white relative">
+    <section className="min-h-screen pt-7 flex items-center px-6 md:px-12 bg-gradient-to-br from-primary to-secondary text-light relative">
       {/* Soft background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accentSoft/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -82,13 +82,13 @@ export default function Hero() {
             className="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight"
           >
             Hi, I&apos;m <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accentSoft">
               Anuoluwapo
             </span>
           </h1>
 
           {/* Animated typing roles */}
-          <div className="text-xl md:text-2xl font-semibold text-highlight">
+          <div className="text-xl md:text-2xl font-semibold text-accentSoft">
             <TypeAnimation
               sequence={[
                 "A Web Developer 🌐",
@@ -105,19 +105,19 @@ export default function Hero() {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accentSoft"
             />
           </div>
 
           <p
             ref={subTextRef}
-            className="text-lg md:text-xl text-highlight max-w-xl mx-auto md:mx-0"
+            className="text-lg md:text-xl text-accentSoft max-w-xl mx-auto md:mx-0"
           >
             I&apos;m passionate about building meaningful digital experiences
             that merge functionality, data, and design. With a strong focus on{" "}
             <span className="text-accent font-medium">Frontend Development</span>, growing
             experience in{" "}
-            <span className="text-highlight font-medium">Backend Systems</span>, and{" "}
+            <span className="text-accentSoft font-medium">Backend Systems</span>, and{" "}
             <span className="text-accentSoft font-medium">Machine Learning</span>. Shaping
             ideas into functional, elegant solutions.
           </p>
