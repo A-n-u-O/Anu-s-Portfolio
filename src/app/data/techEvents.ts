@@ -39,7 +39,7 @@ export const events: eventDetails[] = [
   {
     title: "She Code Africa Mentorship Program – Cycle 3",
     organizer: "She Code Africa",
-    date: "March2026",
+    date: "March 2026",
     description:
       "Participated in the She Code Africa Mentorship Program (Cycle 3), where I received structured mentorship, career guidance, and technical learning support while connecting with a community of women in technology.",
     skills: ["Mentorship", "Community", "Career Development", "Frontend Development"],
