@@ -44,65 +44,8 @@ export default function Contact() {
       viewport={{ once: true, amount: 0.2 }}
       className="bg-secondary text-light px-6 md:px-16 py-28"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
-        {/* ---------- LEFT SIDE (Image + Text) ---------- */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="w-full h-full md:w-1/3 relative flex flex-col justify-center items-center text-center md:text-left space-y-6"
-        >
-          <div className="relative">
-            <Image
-              src="/assets/images/anu3.jpg"
-              alt="Contact illustration"
-              width={500}   // Add this (adjust based on original image size)
-              height={500}  // Add this (adjust based on original image size)
-              className="w-full h-fit rounded-2xl shadow-lg object-cover brightness-90"
-            />
-            <div className="absolute inset-0 bg-black/40 rounded-2xl flex items-center justify-center">
-              <p className="text-xl md:text-2xl font-medium text-light px-6">
-                Let&apos;s connect — your ideas, questions, or just a hello 🌸
-              </p>
-            </div>
-          </div>
-
-          {/* Social Icons */}
-          <div
-            ref={iconsRef}
-            className="flex gap-4 justify-center md:justify-start pt-4 "
-          >
-            <p className="text-2xl text-accent self-center animate-wiggle">
-              Get in touch 👉
-            </p>
-            {socialIcons.map((icon, idx) => (
-              <a
-                key={idx}
-                href={icon.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-12 h-12 flex items-center justify-center rounded-full 
-                           bg-primary/80 backdrop-blur-sm border border-primary/50
-                           hover:border-accent/50 hover:bg-accent/20
-                           transition-all duration-300 hover:scale-110 
-                           hover:shadow-lg hover:shadow-accent/25"
-              >
-                <Image
-                  src={icon.src}
-                  alt={icon.alt}
-                  width={24}
-                  height={24}
-                  className="relative z-10 opacity-80 group-hover:opacity-100 invert transition duration-300"
-                />
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-secondary text-light text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  {icon.alt}
-                </span>
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ---------- RIGHT SIDE (Form) ---------- */}
+      <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
+       
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}

@@ -3,17 +3,17 @@ import { SocialIcon } from "../types/dataTypes";
 export const socialIcons: SocialIcon[] = [
   {
     src: "/assets/icons/icons8-github.svg",
-    alt: "GitHub icon",
+    alt: "GitHub",
     link: "https://github.com/A-n-u-O",
   },
   {
     src: "/assets/icons/icons8-linkedin.svg",
-    alt: "LinkedIn icon",
+    alt: "LinkedIn",
     link: "https://www.linkedin.com/in/anuoluwapo-victor-23ab97253",
   },
   {
     src: "/assets/icons/gmail-svgrepo-com.svg",
-    alt: "Mail icon",
+    alt: "Mail",
     link: "mailto:anuoluwa2051@gmail.com",
   },
 ];

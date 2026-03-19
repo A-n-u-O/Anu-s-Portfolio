@@ -8,12 +8,12 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = [
-    "All",
-    "Web Development",
-    "Machine Learning",
+    // "All",
+    // "Web Development",
+    // "Machine Learning",
     "Frontend",
     "Backend",
-    "Design",
+    // "Design",
   ];
 
   const filteredProjects =
