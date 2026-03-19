@@ -13,12 +13,12 @@ export default function Skills() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative bg-primary text-light px-4 sm:px-6 md:px-12 py-20 sm:py-28"
+      className="relative bg-secondary text-white px-4 sm:px-6 md:px-12 py-20 sm:py-28"
     >
       <div className="max-w-6xl mx-auto space-y-16">
         {techStack.map((group, groupIdx) => (
           <div key={groupIdx} className="space-y-8">
-            <h3 className="text-base sm:text-lg font-semibold bg-gradient-to-r from-accent via-light to-muted bg-clip-text text-transparent tracking-wide text-center sm:text-left">
+            <h3 className="text-base sm:text-lg font-semibold bg-gradient-to-r from-accent via-highlight to-accentSoft bg-clip-text text-transparent tracking-wide text-center sm:text-left">
               {group.category}
             </h3>
 
@@ -36,10 +36,10 @@ export default function Skills() {
                     scale: 1.05,
                     boxShadow: "0 4px 20px rgba(59,130,246,0.25)",
                   }}
-                  className="bg-secondary border border-secondary rounded-2xl flex flex-col items-center justify-center gap-2 py-6 sm:py-8 shadow-md hover:shadow-accent/20 transition"
+                  className="bg-primary border border-primary rounded-2xl flex flex-col items-center justify-center gap-2 py-6 sm:py-8 shadow-md hover:shadow-accent/20 transition"
                 >
                   <Image src={tech.icon} alt={tech.name} width={40} height={40} />
-                  <span className="text-sm sm:text-base text-light mt-1 sm:mt-2">
+                  <span className="text-sm sm:text-base text-white mt-1 sm:mt-2">
                     {tech.name}
                   </span>
                 </motion.div>

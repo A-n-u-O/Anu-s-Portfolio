@@ -116,7 +116,7 @@ export default function Contact() {
           <p className="text-muted text-lg leading-relaxed mb-8 max-w-lg">
             Whether it&apos;s feedback, a project idea, or just a quick “hey, I
             love what you built” — my inbox is always open. I&apos;d love to
-            hear from you 🪴
+            hear from you
           </p>
 
           <motion.form

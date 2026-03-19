@@ -67,11 +67,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen pt-7 flex items-center px-6 md:px-12 bg-gradient-to-br from-primary to-secondary text-light relative">
+    <section className="min-h-screen pt-7 flex items-center px-6 md:px-12 bg-gradient-to-br from-primary to-secondary text-white relative">
       {/* Soft background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-muted/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -82,13 +82,13 @@ export default function Hero() {
             className="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight"
           >
             Hi, I&apos;m <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-muted">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">
               Anuoluwapo
             </span>
           </h1>
 
           {/* Animated typing roles */}
-          <div className="text-xl md:text-2xl font-semibold text-muted">
+          <div className="text-xl md:text-2xl font-semibold text-highlight">
             <TypeAnimation
               sequence={[
                 "A Web Developer 🌐",
@@ -105,20 +105,20 @@ export default function Hero() {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-light"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight"
             />
           </div>
 
           <p
             ref={subTextRef}
-            className="text-lg md:text-xl text-muted max-w-xl mx-auto md:mx-0"
+            className="text-lg md:text-xl text-highlight max-w-xl mx-auto md:mx-0"
           >
             I&apos;m passionate about building meaningful digital experiences
             that merge functionality, data, and design. With a strong focus on{" "}
             <span className="text-accent font-medium">Frontend Development</span>, growing
             experience in{" "}
-            <span className="text-light font-medium">Backend Systems</span>, and{" "}
-            <span className="text-muted font-medium">Machine Learning</span>. Shaping
+            <span className="text-highlight font-medium">Backend Systems</span>, and{" "}
+            <span className="text-accentSoft font-medium">Machine Learning</span>. Shaping
             ideas into functional, elegant solutions.
           </p>
 
@@ -150,7 +150,7 @@ export default function Hero() {
                   height={24}
                   className="relative z-10 opacity-80 group-hover:opacity-100 invert transition duration-300"
                 />
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-light text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   {icon.alt}
                 </span>
               </a>
@@ -160,7 +160,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div ref={imageRef} className="flex justify-center relative">
-          <div className="absolute -inset-10 rounded-full bg-gradient-to-tr from-accent/40 to-light/40 blur-3xl"></div>
+          <div className="absolute -inset-10 rounded-full bg-gradient-to-tr from-accent/40 to-highlight/40 blur-3xl"></div>
           <div className="relative group">
             <Image
               src="/assets/images/anu2.jpg"

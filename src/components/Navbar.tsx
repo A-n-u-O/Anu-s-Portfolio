@@ -11,17 +11,17 @@ export default function Navbar() {
       {/* Logo */}
       <Link
         href="/"
-        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-light bg-clip-text text-transparent tracking-tight"
+        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent tracking-tight"
       >
         Anuoluwapo.
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-8 bg-gradient-to-r from-accent to-light bg-clip-text text-transparent">
-        <Link href="#about" className="hover:text-light transition">About</Link>
-        <Link href="#projects" className="hover:text-light transition">Projects</Link>
-        <Link href="#contact" className="hover:text-light transition">Contact</Link>
-        <Link href="#events" className="hover:text-light transition">Events</Link>
+      <div className="hidden md:flex gap-8 bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">
+        <Link href="#about" className="hover:text-highlight transition">About</Link>
+        <Link href="#projects" className="hover:text-highlight transition">Projects</Link>
+        <Link href="#contact" className="hover:text-highlight transition">Contact</Link>
+        <Link href="#events" className="hover:text-highlight transition">Events</Link>
 
       </div>
 

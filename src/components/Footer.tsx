@@ -10,7 +10,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-[#0a0a0a] text-gray-400 py-10 px-6 md:px-16 border-t border-gray-800"
+      className="bg-secondary text-white py-10 px-6 md:px-16 border-t border-primary"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Copyright */}
