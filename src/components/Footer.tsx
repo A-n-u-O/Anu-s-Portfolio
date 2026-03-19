@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex gap-6 text-lg">
           <a
-            href="https://github.com/yourgithub"
+            href="https://github.com/A-n-u-O"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
@@ -29,20 +29,12 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourlinkedin"
+            href="https://www.linkedin.com/in/a-n-u-o/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
           >
             <FaLinkedin />
-          </a>
-          <a
-            href="https://twitter.com/yourtwitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition"
-          >
-            <FaTwitter />
           </a>
         </div>
       </div>
