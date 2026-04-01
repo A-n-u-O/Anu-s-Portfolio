@@ -53,21 +53,17 @@ export default function About() {
               <p>
                 I&apos;m a{" "}
                 <span className="text-accent font-medium">Frontend Developer</span>{" "}
-                passionate about creating structured, accessible, and visually
-                engaging web solutions. My core focus is on building functional,
-                performant, and user-friendly applications.
+                who enjoys building structured, easy-to-use web applications.
+                I work mainly with React, Next.js, and TypeScript, and I focus on writing
+                clean code and creating interfaces that feel simple and intuitive to use.
               </p>
 
               <p>
-                I also explore{" "}
-                <span className="text-accentSoft font-medium">machine learning</span>{" "}
-                and{" "}
-                <span className="text-accentSoft font-medium">data analysis</span>,
-                where I learn how data insights can shape smarter, user-driven
-                products. Beyond code, I enjoy{" "}
-                <span className="text-accentSoft font-medium">designing</span> and{" "}
-                <span className="text-accentSoft font-medium">video editing</span>,
-                combining logic with creativity to tell stories visually.
+                Most of my recent work has involved dashboards, payment flows, and API-driven features,
+                which has helped me get comfortable with handling real-world data and edge cases.
+                I enjoy figuring out how things work behind the scenes and making sure the frontend
+                reflects that clearly. Outside of coding, I&apos;m also interested in design and how
+                visuals can improve how people experience products.
               </p>
             </div>
 
