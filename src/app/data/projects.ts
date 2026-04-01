@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Apex Merchant Ledger",
     description:
-      "A full-stack settlement portal for SMEs. Features real-time cashflow visibility, simulated bank payment flows with 2s latency, and secure webhook-driven transaction states using Zod and Supabase RLS[cite: 65, 67, 68].",
+      "A full-stack settlement portal for SMEs. Features real-time cashflow visibility, simulated bank payment flows with 2s latency, and secure webhook-driven transaction states using Zod and Supabase RLS policies.",
     image: "/assets/images/apex.png",
     alt: "Apex Merchant Ledger Dashboard",
     links: {
