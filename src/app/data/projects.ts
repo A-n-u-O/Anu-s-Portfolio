@@ -2,6 +2,19 @@ import { Project } from "../types/dataTypes";
 
 export const projects: Project[] = [
   {
+    title: "Apex Merchant Ledger",
+    description:
+      "A full-stack settlement portal for SMEs. Features real-time cashflow visibility, simulated bank payment flows with 2s latency, and secure webhook-driven transaction states using Zod and Supabase RLS[cite: 65, 67, 68].",
+    image: "/assets/images/apex.png",
+    alt: "Apex Merchant Ledger Dashboard",
+    links: {
+      live: "https://merchant-dashboard-umber.vercel.app/",
+      github: "https://github.com/A-n-u-O/merchant-dashboard", 
+    },
+    tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
+    category: ["FullStack", "Fintech"],
+  },
+  {
     title: "Mini-Commerce",
     description:
       "Next.js e-commerce prototype with persistent cart, TypeScript validation, and SEO optimization. Features product browsing, checkout flow, and responsive design.",
