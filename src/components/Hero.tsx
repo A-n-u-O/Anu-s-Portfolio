@@ -89,37 +89,35 @@ export default function Hero() {
 
           {/* Animated typing roles */}
           <div className="text-xl md:text-2xl font-semibold text-accentSoft">
-            <TypeAnimation
-              sequence={[
-                "A Web Developer 🌐",
-                2000,
-                "Designer & Video Editor 🎨",
-                2000,
-                "Exploring Machine Learning 🤖",
-                2000,
-                "Learning Data Analysis 📊",
-                2000,
-                "Blending Creativity with Code 💡",
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accentSoft"
-            />
-          </div>
+            {/* Animated typing roles */}
+            <div className="text-xl md:text-2xl font-semibold text-accentSoft">
+              <TypeAnimation
+                sequence={[
+                  "Frontend Developer 💻",
+                  2000,
+                  "Building with React & Next.js ⚡",
+                  2000,
+                  "Working with APIs & Data 🔗",
+                  2000,
+                  "Creating Clean User Experiences ✨",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accentSoft"
+              />
+            </div></div>
 
           <p
             ref={subTextRef}
             className="text-lg md:text-xl text-accentSoft max-w-xl mx-auto md:mx-0"
           >
-            I&apos;m passionate about building meaningful digital experiences
-            that merge functionality, data, and design. With a strong focus on{" "}
-            <span className="text-accent font-medium">Frontend Development</span>, growing
-            experience in{" "}
-            <span className="text-accentSoft font-medium">Backend Systems</span>, and{" "}
-            <span className="text-accentSoft font-medium">Machine Learning</span>. Shaping
-            ideas into functional, elegant solutions.
+            I&apos;m a <span className="text-accent font-medium">Frontend Developer </span>
+            who enjoys building clean, reliable web applications using
+            <span className="text-accent font-medium"> React, Next.js, and TypeScript</span>.
+            I work a lot with APIs, dashboards, and real-world data, and I like turning
+            complex logic into simple, intuitive user experiences.
           </p>
 
 
