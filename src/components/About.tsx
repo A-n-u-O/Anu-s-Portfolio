@@ -82,7 +82,7 @@ export default function About() {
                 href="/Anuoluwapo_Victor_Cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl border border-secondary text-secondary hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg"
+                className="px-6 py-3 rounded-xl border border-secondary text-accent hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg"
               >
                 View CV
               </a>
