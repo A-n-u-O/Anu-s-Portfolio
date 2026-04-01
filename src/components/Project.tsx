@@ -7,14 +7,7 @@ import ProjectCard from "./ProjectCard";
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = [
-    // "All",
-    // "Web Development",
-    // "Machine Learning",
-    "Frontend",
-    "Backend",
-    // "Design",
-  ];
+  const categories = ["All", "Fintech", "FullStack", "Frontend"];
 
   const filteredProjects =
     selectedCategory === "All"
