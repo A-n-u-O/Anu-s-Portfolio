@@ -4,12 +4,12 @@ export const projects: Project[] = [
   {
     title: "Apex Merchant Ledger",
     description:
-      "A full-stack settlement portal for SMEs. Features real-time cashflow visibility, simulated bank payment flows with 2s latency, and secure webhook-driven transaction states using Zod and Supabase RLS policies.",
+      "A real-time settlement dashboard built to help merchants track cashflow without delays or manual reconciliation. Integrated Paystack payment flows and implemented secure webhook handling to ensure accurate transaction updates, with Supabase RLS enforcing strict data isolation.",
     image: "/assets/images/apex.png",
     alt: "Apex Merchant Ledger Dashboard",
     links: {
       live: "https://merchant-dashboard-umber.vercel.app/",
-      github: "https://github.com/A-n-u-O/merchant-dashboard", 
+      github: "https://github.com/A-n-u-O/merchant-dashboard",
     },
     tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
     category: ["FullStack", "Fintech"],
@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     title: "Mini-Commerce",
     description:
-      "Next.js e-commerce prototype with persistent cart, TypeScript validation, and SEO optimization. Features product browsing, checkout flow, and responsive design.",
+      "An e-commerce prototype focused on improving cart reliability and user flow. Implemented persistent state management to prevent cart loss across sessions, while optimizing performance and SEO for a smooth shopping experience.",
     image: "/assets/images/miniCommerce.png",
     alt: "Mini-Commerce product page screenshot",
     links: {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     title: "Expense Tracker Dashboard",
     description:
-      "A responsive financial dashboard built with Next.js, Zustand, Tailwind CSS, and Chart.js. It allows users to track income and expenses, view real-time summaries, and visualize their spending by category using dynamic charts.",
+      "A financial dashboard designed to help users better understand their spending patterns. Built dynamic charts and real-time summaries, focusing on clear data visualization and responsive state management.",
     image: "/assets/images/expense.png",
     alt: "Expense Tracker Dashboard app",
     links: {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     title: "Auth App",
     description:
-      "A full-stack authentication system with login, registration, and protected dashboard.",
+      "A full-stack authentication system built to handle secure user access and session management. Implemented protected routes and backend validation to ensure only authenticated users can access sensitive data.",
     image: "/assets/images/auth-app.png",
     alt: "Auth app",
     links: {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
   {
     title: "HR Management System",
     description:
-      "Feature-rich HRMS dashboard with role-based access, attendance, and payroll integration.",
+      "A role-based HR dashboard built to simplify employee management workflows. Implemented structured UI for attendance tracking and payroll features, focusing on usability and scalable component design.",
     image: "/assets/images/hr.png",
     alt: "HR management system",
     links: {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
   {
     title: "Todo App",
     description:
-      "A drag-and-drop to-do list with task filtering and clean UI (Frontend Mentor).",
+      "A drag-and-drop task manager focused on improving task organization and usability. Implemented filtering and smooth interactions to enhance user experience.",
     image: "/assets/images/todo.png",
     alt: "Todo app",
     links: {
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     title: "E-commerce Product Page",
     description:
-      "Interactive product display with dynamic preview and cart features.",
+      "An interactive product page designed to improve product visualization and cart interaction. Focused on clean UI and responsive behavior.",
     image: "/assets/images/product.png",
     alt: "E-commerce product page",
     links: {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   {
     title: "Attendance Logging App",
     description:
-      "Efficient app for monitoring and analyzing attendance with a user-friendly interface.",
+      "A simple system for tracking and analyzing attendance records. Designed for clarity and ease of use with a focus on clean interaction flows.",
     image: "/assets/images/attendance.png",
     alt: "Attendance app",
     links: {
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   {
     title: "Social App Project",
     description:
-      "A social media platform with user authentication and real-time updates.",
+      "A social platform prototype with authentication and dynamic updates. Built to explore user interaction patterns and real-time UI behavior.",
     image: "/assets/images/social.png",
     alt: "Social app",
     links: {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
   {
     title: "First Portfolio",
     description:
-      "My first personal portfolio to showcase my skills and projects.",
+      "My first portfolio project, where I explored responsive design and basic frontend structure while learning core web fundamentals.",
     image: "/assets/images/old-portfolio.png",
     alt: "Portfolio Project",
     links: {
