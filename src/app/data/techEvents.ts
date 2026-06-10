@@ -2,6 +2,15 @@ import { eventDetails } from "../types/dataTypes";
 
 export const events: eventDetails[] = [
   {
+    title: "She Code Africa Mentorship Program",
+    organizer: "She Code Africa",
+    date: "2026",
+    description:
+      "Featured in She Code Africa’s official post highlighting my journey in Frontend Development and participation in the mentorship program. Shared insights on women in tech, growth, and building impactful solutions.",
+    skills: ["Frontend Development", "Women in Tech", "Mentorship", "Community"],
+    link: "https://www.linkedin.com/posts/a-n-u-o_shecodeafrica-frontenddevelopment-womenintech-share-7460351982118121473-aAGL/",
+  },
+  {
     title: "TechWomen Fest 2025",
     organizer: "NezaTech Africa",
     date: "October 2025",

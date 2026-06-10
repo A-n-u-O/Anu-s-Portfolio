@@ -2,6 +2,19 @@ import { Project } from "../types/dataTypes";
 
 export const projects: Project[] = [
   {
+    title: "Lagos Driver Solutions Hub LTD",
+    description:
+      "A modern, professional website for a premium chauffeur and driver hire company in Lagos. Built with clean design, strong calls-to-action, and seamless WhatsApp integration to drive bookings. Transformed client mockups into a conversion-focused platform.",
+    image: "/assets/images/drivers.png",  
+    alt: "Lagos Driver Solutions Hub Website",
+    links: {
+      live: "https://lagosdriversolutions.com",
+      github: "https://github.com/A-n-u-O/lagos-driver-solutions-hub",
+    },
+    tech: ["React", "Tailwind CSS", "React Router", "Formspree"],
+    category: ["Frontend", "Web Development", "Client Project"],
+  },
+  {
     title: "Apex Merchant Ledger",
     description:
       "A real-time settlement dashboard built to help merchants track cashflow without delays or manual reconciliation. Integrated Paystack payment flows and implemented secure webhook handling to ensure accurate transaction updates, with Supabase RLS enforcing strict data isolation.",
