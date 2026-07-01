@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: "Lagos Driver Solutions Hub LTD",
     description:
       "A modern, professional website for a premium chauffeur and driver hire company in Lagos. Built with clean design, strong calls-to-action, and seamless WhatsApp integration to drive bookings. Transformed client mockups into a conversion-focused platform.",
-    image: "/assets/images/drivers.png",  
+    image: "/assets/images/drivers.png",
     alt: "Lagos Driver Solutions Hub Website",
     links: {
       live: "https://lagosdriversolutions.com",
@@ -26,6 +26,18 @@ export const projects: Project[] = [
     },
     tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
     category: ["FullStack", "Fintech"],
+  },
+  {
+    title: "Travo Africa",
+    description:
+      " An Infrastructure for intercity travel across Nigeria and Africa smarter, safer, and more transparent. By digitizing passenger records and movement data, we strengthen travel security, improve accountability, and create a more reliable mobility ecosystem.",
+    image: "/assets/images/travo.png",
+    alt: "Travo Africa Dashboard",
+    links: {
+      live: "https://travoafrica.com",
+    },
+    tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
+    category: ["FullStack", "Frontend"],
   },
   {
     title: "Mini-Commerce",
