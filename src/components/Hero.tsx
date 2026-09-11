@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-5 text-sm">
             <a href="#work" className="bg-accent px-5 py-3 text-paper transition hover:bg-ink">View Selected Work</a>
-            <a href="/Anuoluwapo_Victor_Resume.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-accent pb-1 text-accent hover:text-ink">Download CV</a>
+            <a href="/Anuoluwapo_Victor.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-accent pb-1 text-accent hover:text-ink">Download CV</a>
             {socialIcons.slice(0, 2).map((icon) => <a key={icon.alt} href={icon.link} target="_blank" rel="noopener noreferrer" className="border-b border-line pb-1 text-muted hover:border-accent hover:text-accent">{icon.alt}</a>)}
           </div>
         </motion.div>
