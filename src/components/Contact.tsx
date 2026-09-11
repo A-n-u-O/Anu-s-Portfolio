@@ -2,8 +2,6 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -15,12 +13,28 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          name: formRef.current.elements.namedItem("name") instanceof HTMLInputElement
+            ? (formRef.current.elements.namedItem("name") as HTMLInputElement).value
+            : "",
+          email: formRef.current.elements.namedItem("email") instanceof HTMLInputElement
+            ? (formRef.current.elements.namedItem("email") as HTMLInputElement).value
+            : "",
+          message: formRef.current.elements.namedItem("message") instanceof HTMLTextAreaElement
+            ? (formRef.current.elements.namedItem("message") as HTMLTextAreaElement).value
+            : "",
+          subject: "New Portfolio Contact",
+          topic: (formRef.current.elements.namedItem("topic") as HTMLSelectElement).value,
+        }),
+      });
+      const result = (await response.json()) as { success?: boolean };
+
+      if (!response.ok || !result.success) throw new Error("Web3Forms submission failed");
+
       setStatus("success");
       formRef.current?.reset();
       window.setTimeout(() => setStatus("idle"), 4000);
@@ -61,11 +75,10 @@ export default function Contact() {
             onSubmit={sendEmail}
             className="flex flex-col gap-6"
           >
-            <input type="hidden" name="to_name" value="Anuoluwapo" />
             <label className="flex flex-col gap-2 text-sm text-paper">Name
             <input
               type="text"
-              name="user_name"
+              name="name"
               placeholder="Your name"
               required
               className="border-b border-white/30 bg-transparent px-0 py-3 text-paper placeholder:text-muted focus:border-accent focus:outline-none"
@@ -74,7 +87,7 @@ export default function Contact() {
             <label className="flex flex-col gap-2 text-sm text-paper">Email
             <input
               type="email"
-              name="user_email"
+              name="email"
               placeholder="you@example.com"
               required
               className="border-b border-white/30 bg-transparent px-0 py-3 text-paper placeholder:text-muted focus:border-accent focus:outline-none"
