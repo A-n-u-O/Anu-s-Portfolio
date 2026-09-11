@@ -61,6 +61,29 @@ A web solution designed around driver-focused services and user experience.
 
 The portfolio uses a warm editorial visual style with restrained motion, strong typography, responsive layouts, and a focus on readability.
 
+### Install dependencies:
+```npm install```
+
+Create the required environment variables in ```.env.local.```
+
+### For the contact form:
+```NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key```
+
+### Run the development server:
+```npm run dev```
+
+Then open:
+```http://localhost:3000```
+
+### Author
+Anuoluwapo Victor
+
+Portfolio: https://anuvictor.vercel.app/
+
+LinkedIn: https://www.linkedin.com/in/a-n-u-o/
+
+GitHub: https://github.com/A-n-u-O
+
 ## Getting Started
 
 Clone the repository:
