@@ -9,6 +9,16 @@ export interface Project {
   };
   tech: string[];
   category: string[];
+  featured?: boolean;
+  number?: string;
+}
+
+export interface ExperienceEntry {
+  role: string;
+  company: string;
+  dates: string;
+  location: string;
+  description: string[];
 }
 
 export interface SocialIcon {

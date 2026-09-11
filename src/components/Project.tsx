@@ -1,58 +1,30 @@
 "use client";
 
-import { useState } from "react";
 import { projects } from "@/app/data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", "Fintech", "FullStack", "Frontend"];
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category.includes(selectedCategory));
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .sort((a, b) => Number(a.number ?? 99) - Number(b.number ?? 99));
+  const primaryProjects = featuredProjects.filter((project) => ["01", "02", "03"].includes(project.number ?? ""));
+  const secondaryProjects = featuredProjects.filter((project) => !["01", "02", "03"].includes(project.number ?? ""));
+  const otherProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section
-      id="projects"
-      className="bg-primary text-white px-2 sm:px-4 md:px-8 py-16 sm:py-20 md:py-28 min-h-screen"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-2 sm:px-5 py-2 rounded-full border text-sm sm:text-base transition-all duration-300 ${
-                selectedCategory === cat
-                  ? "bg-accent text-white border-transparent"
-                  : "border-secondary text-secondary hover:border-highlight hover:text-highlight"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 relative z-10">
-          {filteredProjects.map((project, idx) => (
-            <div key={`project-${idx}`} className="w-full">
-              <ProjectCard project={project} />
-            </div>
-          ))}
-        </div>
-
-        {/* No Projects Message */}
-        {filteredProjects.length === 0 && (
-          <p className="text-center text-gray-400 mt-10 text-sm sm:text-base">
-            No projects available in this category yet.
-          </p>
-        )}
+    <section id="projects">
+      <div className="grid gap-7 lg:grid-cols-2">
+        {primaryProjects.map((project, index) => <ProjectCard key={project.title} project={project} emphasis={index === 0 ? "lead" : "primary"} />)}
       </div>
+      <div className="mt-7 grid gap-7 lg:grid-cols-3">
+        {secondaryProjects.map((project) => <ProjectCard key={project.title} project={project} emphasis="secondary" />)}
+      </div>
+      <details className="mt-12 border-t border-white/20 pt-5">
+        <summary className="cursor-pointer text-sm text-paper transition hover:text-accent-on-dark">More Projects ({otherProjects.length})</summary>
+        <div className="mt-7 grid gap-7 sm:grid-cols-2">
+          {otherProjects.map((project) => <ProjectCard key={project.title} project={project} compact />)}
+        </div>
+      </details>
     </section>
   );
 }

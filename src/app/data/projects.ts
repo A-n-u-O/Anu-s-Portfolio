@@ -2,6 +2,18 @@ import { Project } from "../types/dataTypes";
 
 export const projects: Project[] = [
   {
+    title: "DecodeLabs Backend Development Projects",
+    description:
+      "A collection of backend projects demonstrating progressive API development—from Express REST fundamentals and PostgreSQL CRUD operations to JWT authentication and third-party API integration.",
+    image: "/assets/images/decode-labs.png",
+    alt: "Backend development project collection",
+    links: { github: "https://github.com/A-n-u-O/decodelabs_tasks" },
+    tech: ["Node.js", "Express.js", "JavaScript", "PostgreSQL", "Prisma ORM", "JWT", "Argon2", "Axios", "Postman"],
+    category: ["Backend", "Featured"],
+    featured: true,
+    number: "02",
+  },
+  {
     title: "Lagos Driver Solutions Hub LTD",
     description:
       "A modern, professional website for a premium chauffeur and driver hire company in Lagos. Built with clean design, strong calls-to-action, and seamless WhatsApp integration to drive bookings. Transformed client mockups into a conversion-focused platform.",
@@ -9,10 +21,11 @@ export const projects: Project[] = [
     alt: "Lagos Driver Solutions Hub Website",
     links: {
       live: "https://lagosdriversolutions.com",
-      github: "https://github.com/A-n-u-O/lagos-driver-solutions-hub",
     },
     tech: ["React", "Tailwind CSS", "React Router", "Formspree"],
     category: ["Frontend", "Web Development", "Client Project"],
+    featured: true,
+    number: "03",
   },
   {
     title: "Apex Merchant Ledger",
@@ -26,6 +39,8 @@ export const projects: Project[] = [
     },
     tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
     category: ["FullStack", "Fintech"],
+    featured: true,
+    number: "01",
   },
   {
     title: "Travo Africa",
@@ -51,6 +66,8 @@ export const projects: Project[] = [
     },
     tech: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
     category: ["Frontend", "Web Development"],
+    featured: true,
+    number: "06",
   },
   {
     title: "Expense Tracker Dashboard",
@@ -64,6 +81,8 @@ export const projects: Project[] = [
     },
     tech: ["Next.js", "Zustand", "Tailwind CSS", "Chart.js"],
     category: ["Frontend", "Web Development"],
+    featured: true,
+    number: "05",
   },
   {
     title: "Auth App",
@@ -76,6 +95,8 @@ export const projects: Project[] = [
     },
     tech: ["React", "Node.js", "PostgreSQL"],
     category: ["FullStack", "Web Development"],
+    featured: true,
+    number: "04",
   },
   {
     title: "HR Management System",
@@ -111,7 +132,6 @@ export const projects: Project[] = [
     alt: "E-commerce product page",
     links: {
       live: "https://e-commerce-page-two-tau.vercel.app/",
-      github: "https://github.com/A-n-u-O/ecommerce-product-page",
     },
     tech: ["HTML", "CSS", "JavaScript"],
     category: ["Frontend", "Web Development"],
@@ -124,7 +144,6 @@ export const projects: Project[] = [
     alt: "Attendance app",
     links: {
       live: "https://attendance-logging-app.vercel.app/",
-      github: "https://github.com/A-n-u-O/attendance-logging-app",
     },
     tech: ["JavaScript"],
     category: ["Frontend", "Web Development"],
@@ -137,7 +156,6 @@ export const projects: Project[] = [
     alt: "Social app",
     links: {
       live: "https://social-media-blue-theta.vercel.app/",
-      github: "https://github.com/A-n-u-O/social-app",
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "Mantine UI"],
     category: ["Frontend", "Web Development"],

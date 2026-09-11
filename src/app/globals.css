@@ -1,40 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0F172A;
-  --foreground: #F8FAFC;
-  --primary: #0F172A;
-  --secondary: #1E293B;
-  --accent: #6366F1;
-  --accentSoft: #A5B4FC;
+  --background: #f5f1ea;
+  --foreground: #201d1b;
+  --paper: #fbf9f5;
+  --ink: #201d1b;
+  --muted: #6e6861;
+  --line: #d9d1c7;
+  --accent: #713548;
+  --accent-on-dark: #e3a0b1;
+  --dark: #282523;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
   --color-accent: var(--accent);
-  --color-accentSoft: var(--accentSoft);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #F8FAFC;
-    --foreground: #0F172A;
-    --primary: #0F172A;
-    --secondary: #1E293B;
-    --accent: #6366F1;
-    --accentSoft: #A5B4FC;
-  }
+  --color-accent-on-dark: var(--accent-on-dark);
+  --color-dark: var(--dark);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.label {
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 html, body {
@@ -42,15 +44,21 @@ html, body {
   width: 100%;
 }
 
-@keyframes wiggle {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
-  }
+::selection {
+  background: var(--accent);
+  color: var(--paper);
 }
 
-.animate-wiggle {
-  animation: wiggle 1s ease-in-out infinite;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

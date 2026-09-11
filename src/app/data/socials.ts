@@ -9,7 +9,7 @@ export const socialIcons: SocialIcon[] = [
   {
     src: "/assets/icons/icons8-linkedin.svg",
     alt: "LinkedIn",
-    link: "https://www.linkedin.com/in/anuoluwapo-victor-23ab97253",
+    link: "https://www.linkedin.com/in/a-n-u-o/",
   },
   {
     src: "/assets/icons/gmail-svgrepo-com.svg",

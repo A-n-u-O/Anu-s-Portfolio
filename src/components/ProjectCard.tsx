@@ -8,36 +8,42 @@ import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
+  compact?: boolean;
+  emphasis?: "lead" | "primary" | "secondary";
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, compact = false, emphasis = "secondary" }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="group w-full min-w-0 bg-primary rounded-2xl overflow-hidden 
-                 shadow-md hover:shadow-accent/20 transition-transform duration-300 
-                 ease-out hover:scale-105 flex flex-col"
+      className={`group flex w-full min-w-0 flex-col overflow-hidden border border-white/15 transition-colors hover:border-accent/70 ${emphasis === "lead" ? "lg:col-span-2" : ""}`}
     >
       {/* Project Image */}
-      <div className="relative w-full h-56 overflow-hidden">
+      <div className={`relative w-full overflow-hidden bg-white/5 ${compact ? "h-44" : emphasis === "lead" ? "h-80" : emphasis === "primary" ? "h-72" : "h-56"}`}>
         <Image
           src={project.image}
           alt={project.alt}
           fill
-          priority
+          priority={!compact}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
       </div>
 
       {/* Project Content */}
-      <div className="flex flex-col flex-1 p-6 space-y-4">
-        <h3 className="text-2xl font-bold text-light">{project.title}</h3>
-        <p className="text-muted text-sm leading-relaxed flex-1">
+      <div className="flex flex-1 flex-col space-y-4 p-6">
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-xl font-semibold text-paper">{project.title}</h3>
+          <span className="font-mono text-xs text-accent-on-dark">{project.number ?? "—"}</span>
+        </div>
+        <p className="flex-1 text-sm leading-relaxed text-muted">
           {project.description}
+        </p>
+        <p className="font-mono text-xs uppercase tracking-wide text-accent-on-dark">
+          {project.category.join(" / ")}
         </p>
 
         {/* Tech Stack */}
@@ -46,7 +52,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tech.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 text-xs font-medium bg-accent text-white rounded-full border border-accent"
+                className="text-xs text-paper/70"
               >
                 {tech}
               </span>
@@ -55,16 +61,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
 
         {/* Links */}
-        <div className="flex gap-3 mt-4">
+        <div className="mt-4 flex gap-4 text-sm">
           {project.links.live && (
             <a
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-accent hover:bg-muted 
-                         text-light px-4 py-2 rounded-lg text-sm transition-colors"
+              aria-label={`${project.title} live demo`}
+              className="flex items-center gap-2 text-accent-on-dark hover:text-paper"
             >
-              <ExternalLink size={16} /> Live
+              <ExternalLink size={16} aria-hidden="true" /> Live
             </a>
           )}
 
@@ -73,10 +79,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-secondary hover:bg-primary 
-                         text-light px-4 py-2 rounded-lg text-sm transition-colors"
+              aria-label={`${project.title} source code`}
+              className="flex items-center gap-2 text-paper/85 hover:text-paper"
             >
-              <FaGithub size={16} /> Code
+              <FaGithub size={16} aria-hidden="true" /> Code
             </a>
           )}
         </div>

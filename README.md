@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ # Anuoluwapo Victor
+
+ Software developer portfolio built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and EmailJS.
+
+ ## Getting Started
+
+ Run the development server:
+
+ ```bash
+ npm run dev
+ ```
+
+ Open [http://localhost:3000](http://localhost:3000) in a browser.
+
+ The homepage is a single-page portfolio with sections for About, Experience, Selected Work, Toolkit, Learning & Community, and Contact.
 
 ## Getting Started
 

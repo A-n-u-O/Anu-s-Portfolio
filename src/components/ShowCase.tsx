@@ -5,25 +5,18 @@ import Projects from "@/components/Project";
 
 export default function Showcase() {
   return (
-    <section
-      id="showcase"
-      className="bg-primary text-light px-4 sm:px-6 md:px-12 lg:px-16 py-16 sm:py-24"
-    >
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
+    <section id="work" className="border-t border-line bg-dark px-6 py-24 text-paper lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-accent via-light to-muted bg-clip-text text-transparent"
+          className="font-serif text-5xl tracking-tight sm:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My Work
+          03 / Selected Work
         </motion.h2>
-
-        {/* Projects Section */}
-        <div className="mt-10">
-          <Projects />
-        </div>
+        <p className="mt-5 max-w-xl text-muted">A selection of interface, product, and backend work. Each project is kept close to the problem it was built to solve.</p>
+        <div className="mt-14"><Projects /></div>
       </div>
     </section>
   );

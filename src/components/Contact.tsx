@@ -3,19 +3,16 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
-import { socialIcons } from "@/app/data/socials";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-
-  const iconsRef = useRef<HTMLDivElement>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;
+    setStatus("sending");
 
     try {
       await emailjs.sendForm(
@@ -26,12 +23,10 @@ export default function Contact() {
       );
       setStatus("success");
       formRef.current?.reset();
-      setTimeout(() => setStatus("idle"), 4000);
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      alert("Error: " + JSON.stringify(error));
+      window.setTimeout(() => setStatus("idle"), 4000);
+    } catch {
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 4000);
+      window.setTimeout(() => setStatus("idle"), 4000);
     }
   };
 
@@ -42,52 +37,53 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-secondary text-light px-6 md:px-16 py-28"
+      className="border-t border-line bg-dark px-6 py-24 text-paper lg:px-10 lg:py-32"
     >
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.35fr_1fr]">
+        <p className="label text-accent-on-dark">06 / Contact</p>
        
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="w-full md:w-2/3"
+          className="w-full max-w-2xl"
         >
-          <motion.h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-accent via-light to-accentSoft bg-clip-text text-transparent mb-6">
-            Let&apos;s Talk ✨
+          <motion.h2 className="font-serif text-5xl tracking-tight text-paper sm:text-7xl">
+            Let&apos;s talk.
           </motion.h2>
 
-          <p className="text-light text-lg leading-relaxed mb-8 max-w-lg">
-            Whether it&apos;s feedback, a project idea, or just a quick “hey, I
-            love what you built” — my inbox is always open. I&apos;d love to
-            hear from you
+          <p className="mb-10 mt-6 max-w-lg text-lg leading-8 text-muted">
+            Whether it&apos;s a project idea, a technical question, or a quick hello, my inbox is open.
           </p>
 
           <motion.form
             ref={formRef}
             onSubmit={sendEmail}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-6"
           >
             <input type="hidden" name="to_name" value="Anuoluwapo" />
-
+            <label className="flex flex-col gap-2 text-sm text-paper">Name
             <input
               type="text"
               name="user_name"
-              placeholder="Your Name (or what should I call you?)"
+              placeholder="Your name"
               required
-              className="bg-primary border border-primary text-light px-4 py-3 rounded-lg focus:outline-none focus:border-accent"
+              className="border-b border-white/30 bg-transparent px-0 py-3 text-paper placeholder:text-muted focus:border-accent focus:outline-none"
             />
-
+            </label>
+            <label className="flex flex-col gap-2 text-sm text-paper">Email
             <input
               type="email"
               name="user_email"
-              placeholder="Your Email"
+              placeholder="you@example.com"
               required
-              className="bg-primary border border-primary text-light px-4 py-3 rounded-lg focus:outline-none focus:border-accent"
+              className="border-b border-white/30 bg-transparent px-0 py-3 text-paper placeholder:text-muted focus:border-accent focus:outline-none"
             />
-
+            </label>
+            <label className="flex flex-col gap-2 text-sm text-paper">Topic
             <select
               name="topic"
-              className="bg-primary border border-primary text-light px-4 py-3 rounded-lg focus:outline-none focus:border-accent"
+              className="border-b border-white/30 bg-transparent px-0 py-3 text-paper focus:border-accent focus:outline-none"
             >
               <option value="">What&apos;s this about? (optional)</option>
               <option>Feedback on your portfolio</option>
@@ -95,34 +91,39 @@ export default function Contact() {
               <option>Scheduling a call</option>
               <option>Just saying hi 👋</option>
             </select>
-
+            </label>
+            <label className="flex flex-col gap-2 text-sm text-paper">Message
             <textarea
               name="message"
               rows={5}
-              placeholder="Your message goes here... be as casual or detailed as you want."
+              placeholder="Tell me a little about what you have in mind."
               required
-              className="bg-primary border border-primary text-light px-4 py-3 rounded-lg resize-none focus:outline-none focus:border-accent"
+              className="resize-none border-b border-white/30 bg-transparent px-0 py-3 text-paper placeholder:text-muted focus:border-accent focus:outline-none"
             />
+            </label>
 
             <motion.button
               type="submit"
-              className="bg-accent hover:bg-accentSoft transition px-6 py-3 rounded-lg text-light font-medium self-center md:self-start shadow-lg shadow-accent/20"
+              disabled={status === "sending"}
+              aria-busy={status === "sending"}
+              className="mt-2 self-start bg-accent px-6 py-3 font-medium text-paper transition hover:bg-paper hover:text-dark disabled:cursor-wait disabled:opacity-60"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Send Message
+              {status === "sending" ? "Sending…" : "Send message"}
             </motion.button>
           </motion.form>
         </motion.div>
       </div>
 
-      {/* ---------- Toast feedback ---------- */}
       {status === "success" && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-accent text-light px-6 py-3 rounded-lg shadow-lg"
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 bg-accent px-6 py-3 text-paper shadow-lg"
         >
           Message sent successfully! 🌸
         </motion.div>
@@ -132,7 +133,8 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg"
+          role="alert"
+          className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 bg-red-800 px-6 py-3 text-white shadow-lg"
         >
           Oops! Something went wrong. Try again
         </motion.div>

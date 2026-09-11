@@ -1,133 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInLeft, fadeInUp } from "@/utils/motion";
-import { animate } from "animejs";
-import { useEffect, useRef } from "react";
-import { techStack } from "@/app/data/techStack";
-import Image from "next/image";
 
 export default function About() {
-  const buttonsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!buttonsRef.current) return;
-    [...buttonsRef.current.children].forEach((child, index) => {
-      animate(child, {
-        opacity: [0, 1],
-        translateY: [10, 0],
-        easing: "easeOutExpo",
-        delay: 600 + index * 150,
-        duration: 600,
-      });
-    });
-  }, []);
-
   return (
-    <motion.section
-      id="about"
-      variants={fadeInUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="relative bg-secondary text-light px-6 md:px-16 py-28 overflow-hidden"
-    >
-      {/* Gradient overlay */}
-      <div className="absolute  inset-0 bg-gradient-to-b from-transparent via-light to-primary opacity-70 pointer-events-none" />
-
-      <div className="relative mt-8 max-w-6xl mx-auto space-y-16">
-        {/* Header */}
-        <motion.h2
-          variants={fadeInLeft}
-          className="text-5xl lg:text-7xl font-bold text-center bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent"
-        >
-          About Me
-        </motion.h2>
-
-        {/* Content Wrapper */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-
-          {/* LEFT: Description + Buttons */}
-          <div className="flex-1 text-center lg:text-left space-y-8">
-            <div className="space-y-6 text-light text-lg lg:text-xl leading-relaxed">
-              <p>
-                I&apos;m a{" "}
-                <span className="text-accent font-medium">Frontend Developer</span>{" "}
-                who enjoys building structured, easy-to-use web applications.
-                I work mainly with React, Next.js, and TypeScript, and I focus on writing
-                clean code and creating interfaces that feel simple and intuitive to use.
-              </p>
-
-              <p>
-                Most of my recent work has involved dashboards, payment flows, and API-driven features,
-                which has helped me get comfortable with handling real-world data and edge cases.
-                I enjoy figuring out how things work behind the scenes and making sure the frontend
-                reflects that clearly. Outside of coding, I&apos;m also interested in design and how
-                visuals can improve how people experience products.
-              </p>
-            </div>
-
-            {/* Buttons */}
-            <div
-              ref={buttonsRef}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <a
-                href="#projects"
-                className="px-6 py-3 rounded-xl border border-accent text-accent hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg hover:shadow-accentSoft/25"
-              >
-                View My Work
-              </a>
-              <a
-                href="/Anuoluwapo_Victor_Cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl border border-secondary text-accent hover:bg-accentSoft hover:text-primary transition-all duration-300 hover:shadow-lg"
-              >
-                View CV
-              </a>
-            </div>
+    <section id="about" className="border-t border-line bg-paper px-6 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.35fr_1fr]">
+        <p className="label">01 / About</p>
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <h2 className="font-serif text-4xl leading-tight text-ink sm:text-5xl">Thoughtful products need both clarity and structure.</h2>
+          <div className="mt-8 space-y-5 text-lg leading-8 text-muted">
+            <p>I&apos;m a Software Developer with a strong frontend foundation and growing backend experience. I enjoy building structured, reliable applications and turning product requirements and complex logic into interfaces and systems that are clear and maintainable.</p>
+            <p>My work has included production interfaces, dashboards, payment flows, API integrations, database-backed applications, authentication systems, and third-party integrations. I&apos;m particularly interested in building products where thoughtful user experience and solid engineering meet.</p>
           </div>
-
-          {/* RIGHT: Tech Stack */}
-          <div className="flex-1">
-            {techStack.map((stack, i) => (
-              <motion.div
-                key={stack.category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="mb-10"
-              >
-                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-primary text-center lg:text-left">
-                  {stack.category}
-                </h3>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-5">
-                  {stack.items.map((item, j) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: j * 0.05 }}
-                      className="bg-accentSoft/60 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-accentSoft/80 transition shadow-md"
-                    >
-                      <Image
-                        src={item.icon}
-                        alt={item.name}
-                        width={24}
-                        height={24}
-                        className="w-6 h-6"
-                      />
-                      <span className="text-primary text-sm">{item.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          <a href="#contact" className="mt-8 inline-block border-b border-accent pb-1 text-sm text-accent hover:text-ink">Let&apos;s work together</a>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

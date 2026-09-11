@@ -9,11 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#0F172A',
-        secondary: '#1E293B',
-        accent: '#6366F1',
-        accentSoft: '#A5B4FC',
-        light: '#F8FAFC',
+        background: 'var(--background)',
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        line: 'var(--line)',
+        accent: 'var(--accent)',
+        'accent-on-dark': 'var(--accent-on-dark)',
+        dark: 'var(--dark)',
       },
     },
   },

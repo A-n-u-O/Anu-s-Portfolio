@@ -7,57 +7,40 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 md:px-16 bg-primary/90 backdrop-blur border-b border-secondary/50">
-      {/* Logo */}
+    <nav className="sticky top-0 z-50 border-b border-line/80 bg-paper/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
       <Link
         href="/"
-        className="text-xl md:text-2xl font-bold bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent tracking-tight"
+        className="font-serif text-xl tracking-tight text-ink"
       >
-        Anuoluwapo.
+        Anuoluwapo Victor
       </Link>
 
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-8 bg-gradient-to-r from-accent to-accentSoft bg-clip-text text-transparent">
-        <Link href="#about" className="hover:text-accentSoft transition">About</Link>
-        <Link href="#projects" className="hover:text-accentSoft transition">Projects</Link>
-        <Link href="#contact" className="hover:text-accentSoft transition">Contact</Link>
-        <Link href="#events" className="hover:text-accentSoft transition">Events</Link>
-
+      <div className="hidden items-center gap-7 text-sm text-muted md:flex">
+        <Link href="#about" className="transition-colors hover:text-accent">About</Link>
+        <Link href="#experience" className="transition-colors hover:text-accent">Experience</Link>
+        <Link href="#work" className="transition-colors hover:text-accent">Work</Link>
+        <Link href="#toolkit" className="transition-colors hover:text-accent">Toolkit</Link>
+        <Link href="#contact" className="transition-colors hover:text-accent">Contact</Link>
       </div>
 
-      {/* Mobile Menu Button */}
       <button
-        className="md:hidden text-light"
+        className="rounded border border-line px-3 py-2 text-xs text-ink transition hover:border-accent hover:text-accent md:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
+        aria-expanded={menuOpen}
       >
-        {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        {menuOpen ? <><FiX size={16} /> <span className="sr-only">Close menu</span></> : <><FiMenu size={16} /> <span className="sr-only">Open menu</span></>}
       </button>
+      </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-primary/95 backdrop-blur py-6 px-6 flex flex-col gap-4 border-b border-secondary/50 text-light">
-          <Link
-            href="#about"
-            className="hover:text-light transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="#projects"
-            className="hover:text-light transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="hover:text-light transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </Link>
+        <div className="border-t border-line/70 bg-paper px-6 py-5 md:hidden">
+          <div className="flex flex-col gap-4 text-sm text-muted">
+            {[['#about', 'About'], ['#experience', 'Experience'], ['#work', 'Work'], ['#toolkit', 'Toolkit'], ['#contact', 'Contact']].map(([href, label]) => (
+              <Link key={href} href={href} className="hover:text-accent" onClick={() => setMenuOpen(false)}>{label}</Link>
+            ))}
+          </div>
         </div>
       )}
     </nav>
