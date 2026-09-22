@@ -5,6 +5,15 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 12);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -18,7 +27,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav aria-label="Primary navigation" className="sticky top-0 z-50 border-b border-line/80 bg-paper/95 backdrop-blur">
+    <nav aria-label="Primary navigation" className={`sticky top-0 z-50 border-b border-line/80 backdrop-blur transition-colors duration-200 ${isScrolled ? "bg-paper/98" : "bg-paper/95"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
       <Link
         href="/"
