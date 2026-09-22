@@ -3,6 +3,8 @@ export interface Project {
   description: string;
   image: string;
   alt: string;
+  imageFit?: "cover" | "contain";
+  imagePosition?: string;
   links: {
     live?: string;
     github?: string;
@@ -10,7 +12,18 @@ export interface Project {
   tech: string[];
   category: string[];
   featured?: boolean;
+  priority?: "featured" | "secondary" | "archive";
   number?: string;
+  slug?: string;
+  role?: string;
+  caseStudy?: {
+    overview?: string;
+    problem?: string;
+    approach?: string;
+    challenges?: string[];
+    outcome?: string;
+    highlights?: string[];
+  };
 }
 
 export interface ExperienceEntry {

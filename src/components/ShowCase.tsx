@@ -15,7 +15,7 @@ export default function Showcase() {
         >
           03 / Selected Work
         </motion.h2>
-        <p className="mt-5 max-w-xl text-muted">A selection of interface, product, and backend work. Each project is kept close to the problem it was built to solve.</p>
+        <p className="mt-5 max-w-xl text-muted">A selection of frontend, full-stack, and backend work — from production interfaces to APIs and data-driven applications.</p>
         <div className="mt-14"><Projects /></div>
       </div>
     </section>
