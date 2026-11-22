@@ -40,11 +40,18 @@ export interface SocialIcon {
   link: string;
 }
 
-export interface eventDetails {
+export type EventStatus = "Attended" | "Completed" | "In progress" | "Volunteered";
+
+export interface EventDetails {
+  id: string;
+  aliases?: string[];
   title: string;
-    organizer: string;
-    date: string;
-    description:string;
-    skills: string[],
-    link?: string;
+  organizer: string;
+  category: string;
+  startDate: string;
+  endDate?: string;
+  status: EventStatus;
+  description: string;
+  link?: string;
+  linkLabel?: string;
 }
