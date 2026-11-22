@@ -1,36 +1,92 @@
- # Anuoluwapo Victor
+# Anuoluwapo Victor — Portfolio
 
- Software developer portfolio built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Web3Forms.
+Personal software development portfolio showcasing selected projects, professional experience, technical skills, and my growth across frontend and backend development.
 
- ## Getting Started
+## Live Site
 
- Run the development server:
+[View Portfolio](https://anuvictor.vercel.app/)
 
- ```bash
- npm run dev
- ```
+## About
 
- Open [http://localhost:3000](http://localhost:3000) in a browser.
+I’m a Software Developer working across frontend interfaces, APIs, and backend systems.
 
- The homepage is a single-page portfolio with sections for About, Experience, Selected Work, Toolkit, Learning & Community, and Contact.
+My work includes building responsive web applications, dashboards, authentication systems, database-backed APIs, and third-party integrations using technologies such as React, Next.js, TypeScript, Node.js, Express.js, PostgreSQL, and Prisma.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Portfolio Highlights
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter.
+The portfolio includes:
 
-## Learn More
+- Professional experience
+- Selected software projects
+- Frontend and backend technical skills
+- Current learning and development
+- Contact form integration
+- Responsive design across desktop and mobile
 
-To learn more about Next.js, take a look at the following resources:
+## Featured Projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Apex Merchant Ledger
+A fintech merchant dashboard for transaction tracking, settlements, analytics, and payment-related workflows.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### DecodeLabs Backend Projects
+A backend development series covering REST APIs, PostgreSQL CRUD, authentication, JWT, protected routes, and third-party API integration.
 
-## Deploy on Vercel
+### Lagos Driver Solutions
+A web solution designed around driver-focused services and user experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend
+- React
+- Next.js
+- TypeScript
+- JavaScript
+- Tailwind CSS
+- Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Backend
+- Node.js
+- Express.js
+- PostgreSQL
+- Prisma ORM
+- REST APIs
+
+### Tools & Services
+- Git
+- GitHub
+- Vercel
+- Web3Forms
+
+## Design Direction
+
+The portfolio uses a warm editorial visual style with restrained motion, strong typography, responsive layouts, and a focus on readability.
+
+### Install dependencies:
+```npm install```
+
+Create the required environment variables in ```.env.local.```
+
+### For the contact form:
+```NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key```
+
+### Run the development server:
+```npm run dev```
+
+Then open:
+```http://localhost:3000```
+
+### Author
+Anuoluwapo Victor
+
+Portfolio: https://anuvictor.vercel.app/
+
+LinkedIn: https://www.linkedin.com/in/a-n-u-o/
+
+GitHub: https://github.com/A-n-u-O
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/A-n-u-O/Anu-s-Portfolio.git
