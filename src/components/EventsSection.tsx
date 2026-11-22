@@ -4,6 +4,50 @@ import { events } from "@/app/data/techEvents";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
+const uniqueEvents = events.filter((event, index, allEvents) => {
+  const keys = [event.title, ...(event.aliases ?? [])].map((value) =>
+    value.toLowerCase().replace(/[^a-z0-9]/g, ""),
+  );
+
+  return !allEvents.slice(0, index).some((previous) => {
+    if (previous.id === event.id) return true;
+
+    const previousKeys = [previous.title, ...(previous.aliases ?? [])].map((value) =>
+      value.toLowerCase().replace(/[^a-z0-9]/g, ""),
+    );
+
+    return keys.some((key) => previousKeys.includes(key));
+  });
+});
+
+const sortedEvents = [...uniqueEvents].sort((a, b) => {
+  const aSortDate = a.status === "In progress" ? a.startDate : a.endDate ?? a.startDate;
+  const bSortDate = b.status === "In progress" ? b.startDate : b.endDate ?? b.startDate;
+  const [aYear, aMonth, aDay] = aSortDate.split("-");
+  const [bYear, bMonth, bDay] = bSortDate.split("-");
+  const monthOrder = `${bYear}-${bMonth}`.localeCompare(`${aYear}-${aMonth}`);
+
+  if (monthOrder !== 0) return monthOrder;
+  if (aDay && !bDay) return -1;
+  if (!aDay && bDay) return 1;
+  if (!aDay || !bDay) return 0;
+  return Number(bDay) - Number(aDay);
+});
+
+function formatEventDate(startDate: string, endDate?: string) {
+  const format = (date: string) => {
+    const [year, month, day] = date.split("-").map(Number);
+    const monthName = new Date(Date.UTC(year, month - 1)).toLocaleString("en", {
+      month: "long",
+      timeZone: "UTC",
+    });
+
+    return day ? `${monthName} ${day}, ${year}` : `${monthName} ${year}`;
+  };
+
+  return endDate ? `${format(startDate)} – ${format(endDate)}` : format(startDate);
+}
+
 export default function Events() {
   return (
     <section id="events" className="border-t border-line bg-paper px-6 py-24 lg:px-10 lg:py-32">
@@ -20,32 +64,41 @@ export default function Events() {
         <p className="mt-5 max-w-xl text-muted">A record of the communities, programs, and events that have shaped my practice.</p>
 
         <div className="mt-14 divide-y divide-line border-y border-line">
-          {events.map((event, i) => (
+          {sortedEvents.map((event, i) => (
             <motion.div
-              key={i}
-              className="grid gap-4 py-7 md:grid-cols-[0.8fr_1.5fr_0.6fr]"
+              key={event.id}
+              className="grid gap-5 py-7 md:grid-cols-[minmax(12rem,0.8fr)_minmax(0,1.5fr)_minmax(10rem,0.6fr)] md:gap-8"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
+              transition={{ delay: Math.min(i * 0.06, 0.3), duration: 0.45 }}
               viewport={{ once: true }}
             >
-              <div><h3 className="font-semibold text-ink">{event.title}</h3><p className="mt-1 text-sm text-accent">{event.organizer}</p></div>
-              <div><p className="text-sm leading-6 text-muted">{event.description}</p><div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                {event.skills.map((skill, j) => (
-                  <span key={j} className="text-xs text-muted before:mr-2 before:text-accent before:content-['/']">
-                    {skill}
-                  </span>
-                ))}
-              </div></div>
-
-              <div className="flex flex-col items-start gap-3 text-xs text-muted">
-                <p className="font-mono uppercase tracking-wide">{event.date}</p>
-                {event.link && <a
-                  href={event.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-fit items-center gap-2 text-sm text-accent hover:text-ink"
-                >View source <ExternalLink size={14} aria-hidden="true" /></a>}
+              <div>
+                <h3 className="font-semibold leading-snug text-ink">{event.title}</h3>
+                <p className="mt-1 text-sm text-muted">{event.organizer}</p>
+              </div>
+              <div>
+                <p className="text-sm leading-6 text-muted">{event.description}</p>
+                <p className="mt-3 text-xs text-accent">{event.category}</p>
+              </div>
+              <div className="flex flex-col items-start gap-2 text-xs text-muted md:items-end md:text-right">
+                <p className="font-mono tabular-nums">{formatEventDate(event.startDate, event.endDate)}</p>
+                <span className="border-l border-accent pl-2 text-ink md:border-l-0 md:border-r md:pr-2">
+                  {event.status}
+                </span>
+                {event.link ? (
+                  <a
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent hover:text-ink"
+                  >
+                    {event.linkLabel ?? "View post"}
+                    <ExternalLink size={13} aria-hidden="true" />
+                  </a>
+                ) : (
+                  <span className="text-muted">Reflection link awaiting input</span>
+                )}
               </div>
             </motion.div>
           ))}

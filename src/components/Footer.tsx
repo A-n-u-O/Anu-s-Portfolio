@@ -22,7 +22,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex gap-5 text-lg text-muted">
           <a
-            href="https://github.com/A-n-u-O"
+            href={socialIcons[0].link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -31,7 +31,7 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/a-n-u-o/"
+            href={socialIcons[1].link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Project } from "@/app/types/dataTypes";
 import { FaGithub } from "react-icons/fa";
@@ -13,6 +14,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, compact = false, emphasis = "secondary" }: ProjectCardProps) {
+  const hasCaseStudy = Boolean(project.slug && project.caseStudy && (project.caseStudy.overview || project.caseStudy.problem || project.caseStudy.approach));
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -22,14 +25,15 @@ export default function ProjectCard({ project, compact = false, emphasis = "seco
       className={`group flex w-full min-w-0 flex-col overflow-hidden border border-white/15 transition-colors hover:border-accent/70 ${emphasis === "lead" ? "lg:col-span-2" : ""}`}
     >
       {/* Project Image */}
-      <div className={`relative w-full overflow-hidden bg-white/5 ${compact ? "h-44" : emphasis === "lead" ? "h-80" : emphasis === "primary" ? "h-72" : "h-56"}`}>
+      <div className={`relative w-full overflow-hidden bg-white/5 ${compact ? "h-44" : emphasis === "lead" ? "h-96" : emphasis === "primary" ? "h-80" : "h-60"}`}>
         <Image
           src={project.image}
           alt={project.alt}
           fill
-          priority={!compact}
+          priority={emphasis === "lead"}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          style={{ objectPosition: project.imagePosition }}
+          className={`${project.imageFit === "contain" ? "object-contain p-3" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
         />
       </div>
 
@@ -61,7 +65,7 @@ export default function ProjectCard({ project, compact = false, emphasis = "seco
         )}
 
         {/* Links */}
-        <div className="mt-4 flex gap-4 text-sm">
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3 border-t border-white/10 pt-4 text-sm">
           {project.links.live && (
             <a
               href={project.links.live}
@@ -84,6 +88,16 @@ export default function ProjectCard({ project, compact = false, emphasis = "seco
             >
               <FaGithub size={16} aria-hidden="true" /> Code
             </a>
+          )}
+
+          {hasCaseStudy && (
+            <Link
+              href={`/projects/${project.slug}`}
+              aria-label={`${project.title} case study`}
+              className="text-paper/85 hover:text-accent-on-dark"
+            >
+              Case Study
+            </Link>
           )}
         </div>
       </div>

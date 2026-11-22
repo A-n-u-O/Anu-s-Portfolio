@@ -57,8 +57,8 @@ export default function Contact() {
         <p className="label text-accent-on-dark">06 / Contact</p>
        
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="w-full max-w-2xl"
         >

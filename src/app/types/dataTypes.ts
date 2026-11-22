@@ -3,6 +3,8 @@ export interface Project {
   description: string;
   image: string;
   alt: string;
+  imageFit?: "cover" | "contain";
+  imagePosition?: string;
   links: {
     live?: string;
     github?: string;
@@ -10,7 +12,18 @@ export interface Project {
   tech: string[];
   category: string[];
   featured?: boolean;
+  priority?: "featured" | "secondary" | "archive";
   number?: string;
+  slug?: string;
+  role?: string;
+  caseStudy?: {
+    overview?: string;
+    problem?: string;
+    approach?: string;
+    challenges?: string[];
+    outcome?: string;
+    highlights?: string[];
+  };
 }
 
 export interface ExperienceEntry {
@@ -27,11 +40,18 @@ export interface SocialIcon {
   link: string;
 }
 
-export interface eventDetails {
+export type EventStatus = "Attended" | "Completed" | "In progress" | "Volunteered";
+
+export interface EventDetails {
+  id: string;
+  aliases?: string[];
   title: string;
-    organizer: string;
-    date: string;
-    description:string;
-    skills: string[],
-    link?: string;
+  organizer: string;
+  category: string;
+  startDate: string;
+  endDate?: string;
+  status: EventStatus;
+  description: string;
+  link?: string;
+  linkLabel?: string;
 }

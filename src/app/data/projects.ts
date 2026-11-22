@@ -2,32 +2,6 @@ import { Project } from "../types/dataTypes";
 
 export const projects: Project[] = [
   {
-    title: "DecodeLabs Backend Development Projects",
-    description:
-      "A collection of backend projects demonstrating progressive API development—from Express REST fundamentals and PostgreSQL CRUD operations to JWT authentication and third-party API integration.",
-    image: "/assets/images/decode-labs.png",
-    alt: "Backend development project collection",
-    links: { github: "https://github.com/A-n-u-O/decodelabs_tasks" },
-    tech: ["Node.js", "Express.js", "JavaScript", "PostgreSQL", "Prisma ORM", "JWT", "Argon2", "Axios", "Postman"],
-    category: ["Backend", "Featured"],
-    featured: true,
-    number: "02",
-  },
-  {
-    title: "Lagos Driver Solutions Hub LTD",
-    description:
-      "A modern, professional website for a premium chauffeur and driver hire company in Lagos. Built with clean design, strong calls-to-action, and seamless WhatsApp integration to drive bookings. Transformed client mockups into a conversion-focused platform.",
-    image: "/assets/images/drivers.png",
-    alt: "Lagos Driver Solutions Hub Website",
-    links: {
-      live: "https://lagosdriversolutions.com",
-    },
-    tech: ["React", "Tailwind CSS", "React Router", "Formspree"],
-    category: ["Frontend", "Web Development", "Client Project"],
-    featured: true,
-    number: "03",
-  },
-  {
     title: "Apex Merchant Ledger",
     description:
       "A real-time settlement dashboard built to help merchants track cashflow without delays or manual reconciliation. Integrated Paystack payment flows and implemented secure webhook handling to ensure accurate transaction updates, with Supabase RLS enforcing strict data isolation.",
@@ -38,9 +12,91 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/merchant-dashboard",
     },
     tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
-    category: ["FullStack", "Fintech"],
+    category: ["Full-Stack", "Fintech"],
     featured: true,
+    priority: "featured",
     number: "01",
+    slug: "apex-merchant-ledger",
+    caseStudy: {
+      overview: "A fintech settlement dashboard designed around transaction visibility and cash-flow tracking, combining payment activity with interactive financial analytics.",
+      approach: "Built the application with Next.js 15 and TypeScript, using Zustand for client state, Supabase for persisted data and Row Level Security, Chart.js for interactive analytics, and Paystack for payment flows. Webhook-driven updates keep transaction activity reflected in the application.",
+      highlights: [
+        "Transaction and cash-flow tracking",
+        "Paystack payment flows",
+        "Webhook-driven updates",
+        "Supabase Row Level Security",
+        "Interactive analytics",
+      ],
+    },
+  },
+  {
+    title: "FairPlay Content Registry API",
+    description:
+      "Built and documented a REST API for creator authentication and content registration with Argon2 password hashing, JWT-protected routes, PostgreSQL persistence, unique registration IDs, creator-scoped retrieval, resource-level authorization, validation, and structured error handling.",
+    image: "/assets/images/fairplay-api.png",
+    alt: "FairPlay Content Registry API project",
+    imageFit: "contain",
+    imagePosition: "center",
+    links: {
+      github: "https://github.com/A-n-u-O/fairplay-content-registry-api",
+    },
+    tech: ["Node.js", "Express.js", "PostgreSQL", "Prisma ORM", "JWT", "Argon2"],
+    category: ["Backend", "API", "Authentication"],
+    priority: "featured",
+    number: "02",
+    slug: "fairplay-content-registry-api",
+    role: "Backend Developer",
+    caseStudy: {
+      overview: "A REST API built for a creator-content registration use case. Creators can create accounts, authenticate, register content and retrieve content associated with their own account.",
+      problem: "The system needed to associate registered content with authenticated creators while preventing one creator from retrieving another creator's records.",
+      approach: "Built with Node.js, Express.js, PostgreSQL and Prisma ORM. Authentication uses JWT and passwords are hashed with Argon2. Protected routes derive creator identity from the verified token rather than accepting ownership information from the client.",
+      highlights: [
+        "Creator registration and login",
+        "Argon2 password hashing",
+        "JWT authentication middleware",
+        "PostgreSQL persistence",
+        "User-to-Content relational model",
+        "Unique public content registration IDs",
+        "Creator-scoped content retrieval",
+        "Resource-level ownership authorization",
+        "Input validation",
+        "Duplicate-email prevention",
+        "Structured HTTP error responses",
+        "Postman-tested API flows",
+      ],
+      challenges: [
+        "Separating authentication from authorization",
+        "Ensuring content ownership came from the authenticated JWT rather than a client-supplied userId",
+        "Working with Prisma 8 RC's newer ORM querying API",
+        "Handling Temporal support required by the Prisma runtime environment",
+      ],
+      outcome: "A documented and tested REST API supporting creator authentication, protected content registration and creator-scoped retrieval.",
+    },
+  },
+  {
+    title: "Lagos Driver Solutions Hub LTD",
+    description:
+      "A modern, professional website for a premium chauffeur and driver hire company in Lagos. Built with clean design, strong calls-to-action, and seamless WhatsApp integration to drive bookings. Transformed client mockups into a conversion-focused platform.",
+    image: "/assets/images/drivers.png",
+    alt: "Lagos Driver Solutions Hub Website",
+    links: { live: "https://lagosdriversolutions.com" },
+    tech: ["React", "Tailwind CSS", "React Router", "Formspree"],
+    category: ["Frontend", "Web Development", "Client Project"],
+    featured: true,
+    priority: "featured",
+    number: "03",
+  },
+  {
+    title: "DecodeLabs Backend Development Projects",
+    description:
+      "A collection of backend projects demonstrating progressive API development—from Express REST fundamentals and PostgreSQL CRUD operations to JWT authentication and third-party API integration.",
+    image: "/assets/images/decode-labs.png",
+    alt: "Backend development project collection",
+    links: { github: "https://github.com/A-n-u-O/decodelabs_tasks" },
+    tech: ["Node.js", "Express.js", "JavaScript", "PostgreSQL", "Prisma ORM", "JWT", "Argon2", "Axios", "Postman"],
+    category: ["Backend"],
+    priority: "archive",
+    number: "02",
   },
   {
     title: "Travo Africa",
@@ -52,7 +108,8 @@ export const projects: Project[] = [
       live: "https://travoafrica.com",
     },
     tech: ["Next.js 15", "TypeScript", "Zustand", "Supabase", "Chart.js"],
-    category: ["FullStack", "Frontend"],
+    category: ["Full-Stack", "Frontend"],
+    priority: "archive",
   },
   {
     title: "Mini-Commerce",
@@ -66,8 +123,8 @@ export const projects: Project[] = [
     },
     tech: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS"],
     category: ["Frontend", "Web Development"],
-    featured: true,
-    number: "06",
+    priority: "secondary",
+    number: "04",
   },
   {
     title: "Expense Tracker Dashboard",
@@ -81,7 +138,7 @@ export const projects: Project[] = [
     },
     tech: ["Next.js", "Zustand", "Tailwind CSS", "Chart.js"],
     category: ["Frontend", "Web Development"],
-    featured: true,
+    priority: "secondary",
     number: "05",
   },
   {
@@ -94,9 +151,9 @@ export const projects: Project[] = [
       github: "https://github.com/A-n-u-O/Authentication-with-PERN-stack",
     },
     tech: ["React", "Node.js", "PostgreSQL"],
-    category: ["FullStack", "Web Development"],
-    featured: true,
-    number: "04",
+    category: ["Full-Stack", "Web Development"],
+    priority: "secondary",
+    number: "06",
   },
   {
     title: "HR Management System",
@@ -110,6 +167,7 @@ export const projects: Project[] = [
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "Material UI"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
   {
     title: "Todo App",
@@ -123,6 +181,7 @@ export const projects: Project[] = [
     },
     tech: ["React", "Vite", "HTML", "CSS"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
   {
     title: "E-commerce Product Page",
@@ -135,6 +194,7 @@ export const projects: Project[] = [
     },
     tech: ["HTML", "CSS", "JavaScript"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
   {
     title: "Attendance Logging App",
@@ -147,6 +207,7 @@ export const projects: Project[] = [
     },
     tech: ["JavaScript"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
   {
     title: "Social App Project",
@@ -159,6 +220,7 @@ export const projects: Project[] = [
     },
     tech: ["React", "TypeScript", "Tailwind CSS", "Mantine UI"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
   {
     title: "First Portfolio",
@@ -172,5 +234,6 @@ export const projects: Project[] = [
     },
     tech: ["HTML", "CSS", "JavaScript"],
     category: ["Frontend", "Web Development"],
+    priority: "archive",
   },
 ];

@@ -44,6 +44,10 @@ html, body {
   width: 100%;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--paper);
