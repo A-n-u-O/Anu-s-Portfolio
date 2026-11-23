@@ -86,7 +86,7 @@ export default function Events() {
                 <span className="border-l border-accent pl-2 text-ink md:border-l-0 md:border-r md:pr-2">
                   {event.status}
                 </span>
-                {event.link ? (
+                {event.link && (
                   <a
                     href={event.link}
                     target="_blank"
@@ -96,8 +96,6 @@ export default function Events() {
                     {event.linkLabel ?? "View post"}
                     <ExternalLink size={13} aria-hidden="true" />
                   </a>
-                ) : (
-                  <span className="text-muted">Reflection link awaiting input</span>
                 )}
               </div>
             </motion.div>
