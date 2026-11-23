@@ -18,7 +18,6 @@ export const events: EventDetails[] = [
     organizer: "Google Developer Groups Lagos (GDG Lagos)",
     category: "Conference",
     startDate: "2026-11-13",
-    endDate: "2026-11-14",
     status: "Attended",
     description: "Attended sessions spanning product thinking, APIs, and AI security.",
     link: "https://www.linkedin.com/posts/a-n-u-o_devfestlagos-softwareengineering-techcareers-activity-7527777601176641537-dL01",
@@ -89,7 +88,5 @@ export const events: EventDetails[] = [
     startDate: "2025-04",
     status: "Volunteered",
     description: "Supported the TEDxBabcock University organizing team with event planning, logistics, and coordination.",
-    link: "https://www.linkedin.com/posts/a-n-u-o_tedxbabcock-innovation-ideasworthspreading-activity-7177289115329837056-XYzO",
-    linkLabel: "View my post",
   },
 ];
