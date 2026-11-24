@@ -4,13 +4,11 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Backend Development Intern",
     company: "Decode Labs",
-    dates: "Aug 2026 – Present",
+    dates: "Aug 2026 – Sep 2026",
     location: "Remote",
     description: [
-      "Building backend applications with Node.js and Express.js using routing, middleware, request/response handling, validation, and REST API development.",
-      "Built PostgreSQL-backed CRUD and authentication APIs with Prisma ORM, Argon2 password hashing, JWT authentication, protected routes, validation, and reusable middleware.",
-      "Integrated a third-party weather API using Axios, environment variables, response transformation, timeout handling, and external API error handling.",
-      "Used Postman to test endpoints, status codes, validation scenarios, authentication flows, and error responses.",
+      "Developed backend applications with Node.js and Express.js using REST APIs, routing, middleware, request and response handling, and validation.",
+      "Built PostgreSQL-backed CRUD and authentication APIs with Prisma, JWT authentication, password hashing, protected routes, and reusable middleware.",
     ],
   },
   {
@@ -19,10 +17,11 @@ export const experience: ExperienceEntry[] = [
     dates: "Jul 2026 – Present",
     location: "Remote",
     description: [
-      "Develop production features in an existing Next.js, React, and TypeScript monorepo.",
-      "Translate Figma designs into responsive admin and customer-facing interfaces.",
-      "Built a multi-step booking flow involving forms, calendar scheduling, guest management, Stripe and Paystack payments, REST APIs, React Query, and URL/session state.",
-      "Shipped and maintained multiple application views and reusable components while debugging API, CORS, hydration, state, and integration issues.",
+      "Develop React, Next.js and TypeScript features across storefront, scheduling and admin applications in a shared monorepo.",
+      "Implemented Stripe Connect-aware payment flows across checkout, consultations and bookings, maintaining connected-account context through state and redirects.",
+      "Extended scheduling interfaces with timezone-aware availability, staff and location selection, guest management and API-backed booking creation.",
+      "Integrated referral-aware signup and subscription pricing APIs, mapping responses into typed, reusable components.",
+      "Improved responsive interfaces, developed transactional email templates and debugged API, routing and frontend state issues.",
     ],
   },
   {
@@ -32,18 +31,18 @@ export const experience: ExperienceEntry[] = [
     location: "Remote",
     description: [
       "Support merchant onboarding and technical/API integration requirements.",
-      "Diagnose API and platform issues and collaborate with engineering teams on root-cause resolution.",
-      "Work closely with fintech integrations and merchant-facing technical workflows.",
+      "Troubleshoot API and platform issues and document findings for resolution.",
+      "Collaborate with engineering teams on technical investigations and integration requirements.",
     ],
   },
   {
-    role: "Software Engineer Intern — Cortex 3.0",
+    role: "Software Engineering Intern (Cortex 3.0)",
     company: "OnePipe",
     dates: "Nov 2025 – Feb 2026",
     location: "Remote",
     description: [
-      "Built and documented Oxyhome, a fintech installment-payment web application.",
-      "Worked with PayWithAccount concepts including account linking, mandate authorization, recurring debit flows, webhooks, and settlement states.",
+      "Contributed to Oxyhome, a team-built fintech installment-payment web application.",
+      "Worked with PayWithAccount concepts including account linking, mandate authorization, recurring debit flows, webhooks and settlement states.",
     ],
   },
   {
